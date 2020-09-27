@@ -1,0 +1,19 @@
+*{
+    line-height: 1.6em;
+    box-sizing: border-box;
+    font-size: 1.3rem;
+}
+
+
+input{
+    margin: 5px;
+}
+
+select{
+    padding: 5px;
+}
+
+form{
+    width: 700px;
+    margin: auto;
+}
