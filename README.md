@@ -1,6 +1,8 @@
 # Programmen 3 #
 
 Hier komen alle lessen van de module Programmeren 3 in te staan.
+De module wordt gevolgd inhet schooljaar 2020-2021 aan de AP Hogeschool.
+De cursus is terug te vinden op https://modernways.be/myap/it/school/course/Programmeren%203.html
 
 ### In deze module leren we werken met ASP.NET Core voor Windows én Linux. Cursisten die op een Mac werken leren werken met .NET Core voor OS X en Linux. ###
 
