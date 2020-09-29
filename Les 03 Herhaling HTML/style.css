@@ -14,6 +14,10 @@ select{
 }
 
 form{
-    width: 700px;
+    width: 750px;
     margin: auto;
+}
+
+select{
+    margin: 5px;
 }

@@ -1,12 +1,12 @@
 // functions
-let PopulateCountries = function(){
+let PopulateCountries = function () {
     let select = document.getElementById("countryCode");
 
     for (var key in countries) {
         let option = document.createElement("option");
         option.value = key;
         option.textContent = countries[key];
-        if (key == 'BE'){
+        if (key == 'BE') {
             option.selected = select;
         }
         select.appendChild(option);
@@ -14,15 +14,66 @@ let PopulateCountries = function(){
 };
 
 
-// eventlisteners
-window.addEventListener("load", PopulateCountries)
+let PopulateFaculty = function () {
+    let select = document.querySelector("#faculty");
 
-// data
-let faculty = {
-    
+    faculties.forEach((fac) => {
+        let option = document.createElement("option");
+        option.value = fac;
+        option.textContent = fac;
+        select.appendChild(option);
+    });
 }
 
+let PopulateModules = function () {
+    let select = document.querySelector("#course");
 
+    modules.forEach((mod) => {
+        let option = document.createElement("option");
+        option.value = mod;
+        option.textContent = mod;
+        select.appendChild(option);
+    });
+}
+
+//number validator
+var cleavePhoneNumber = new Cleave('.gsm', {
+    phone: true,
+    phoneRegionCode: 'BE'
+});
+
+
+
+// eventlisteners
+window.addEventListener("load", PopulateCountries);
+window.addEventListener("load", PopulateFaculty);
+window.addEventListener("load", PopulateModules);
+
+
+// data
+let faculties = [
+    "HBO Informatica programmeren",
+    "HBO Informatica netwerken"
+]
+
+let modules = [
+    "Webtechnologie",
+    "Programmeren",
+    "Databanken Intro",
+    "IT Essentials",
+    "Netwerken",
+    "Objectgeoriënteerd programmeren",
+    "Webontwikkeling",
+    "Databanken",
+    "Web Services",
+    "Web Frameworks",
+    "Software Testing",
+    "IT Organisatie",
+    "CMS Intro",
+    "Communiceren",
+    "IT Project",
+    "Software Security"
+]
 
 
 

@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Les 3</title>
     <link rel="stylesheet" href="style.css">
+    <!-- script tag om cleave library te laden -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.5.3/cleave.min.js" integrity="sha256-yx/X2dD86fWz9OyQ/ZnQH8BQaS5Ta4OuNJICU17rySE=" crossorigin="anonymous"></script>
+    <!-- script om telefoonnummer te valideren -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.5.3/addons/cleave-phone.be.js" integrity="sha256-qqwpsyMPyku8+5Nt7oQVV9ZC1bFEsv0EYwo+6PoBLAU=" crossorigin="anonymous"></script>
+    
     <script src="script.js" defer></script>
 </head>
 
@@ -31,7 +36,7 @@
             </div>
             <div>
                 <label for="password2">Wachtwoord bevestigen <span class="required">*</span></label>
-                <input type="password" name="password2" id="password2" required>
+                <input  type="password" name="password2" id="password2" required>
             </div>
         </fieldset>
         <fieldset>
@@ -60,8 +65,8 @@
         <fieldset>
             <legend>Persoonlijke gegevens</legend>
             <div>
-                <label for="gsm">GSM</label>
-                <input type="text" name="gsm" id="gsm">
+                <label for="gsm">GSM (Only Belgian numbers)</label>
+                <input class="gsm" type="text" name="gsm" id="gsm">
             </div>
             <div>
                 <label for="birthday">Geboortedatum</label>
