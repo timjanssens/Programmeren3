@@ -25,12 +25,12 @@ namespace Helpers
                 {
                     this.Text = sr.ReadToEnd();
                     this.Melding = string.Format($"Het bestand met de naam {this.FileName} is ingelezen. Het bevat {this.Text.Length} karakters en {this.Text.Split(';')} woorden en {this.Text.Split('\n').Length} regels.");
+                 
                     result = true;
                 }
             }
             catch (Exception e)
             {
-
                 this.Melding = $"Kan het bestand met de naam {this.FileName} niet inlezen. \nFoutmelding: {e.Message}.";
             }
 
