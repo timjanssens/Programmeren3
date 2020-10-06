@@ -15,7 +15,10 @@ namespace Les07DemoTekstbestandInlezen
             // zet stringvoorstelling postcodes om in een lijst
             // van postcode-objecten en toon de lijst in de console
             TryOut.ListPostcodes(TryOut.GetPostcodeList());
-           
+
+
+            Console.WriteLine(TryOut.SerializeObjectToCsv(TryOut.GetPostcodeList(), "|"));
+
 
             Console.ReadKey();
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -12,7 +13,7 @@ namespace Les07DemoTekstbestandInlezen
         {
 
             Helpers.Tekstbestand bestand = new Helpers.Tekstbestand();
-            bestand.FileName = @"d:\Programmeren3\postcodes.csv";
+            bestand.FileName = @"Data\postcodes.csv";
             bestand.Lees();
             return bestand.Text;
         }
@@ -20,7 +21,7 @@ namespace Les07DemoTekstbestandInlezen
         public static string ReadPostcodesFromCSVFile()
         {
             Helpers.Tekstbestand bestand = new Helpers.Tekstbestand();
-            bestand.FileName = @"D:\Programmeren3\postcodes.csv";
+            bestand.FileName = @"Data\postcodes.csv";
             bestand.Lees();
             return bestand.Text;
         }
@@ -37,8 +38,8 @@ namespace Les07DemoTekstbestandInlezen
                     list.Add(PostcodeCsvToObject(s));
                 }
             }
-    
-            return list;
+
+             return list;
         }
         public static Postcode PostcodeCsvToObject(string line)
         {
@@ -47,9 +48,8 @@ namespace Les07DemoTekstbestandInlezen
             postcode.Code = values[0];
             postcode.Plaats = values[1];
             postcode.Provincie = values[2];
-            postcode.Locatie = values[3];
-            //moet worden weggelaten, staat er reeds in als value[2]
-           // postcode.Provincie = values[4];
+            postcode.Localite = values[3];
+            postcode.Province = values[4];
             return postcode;
         }
 
@@ -63,12 +63,46 @@ namespace Les07DemoTekstbestandInlezen
                     postcode?.Code,
                     postcode?.Plaats,
                     postcode?.Provincie,
-                    postcode?.Locatie,
-                    postcode?.Provincie
+                    postcode?.Localite,
+                    postcode?.Province
                     );
             }
         }
 
 
+        public static string SerializeObjectToCsv(List<Postcode> list, string separator)
+        {
+            string fileName = @"Data/Postcodes2.csv";
+            string message;
+
+            try
+            {
+                TextWriter writer = new StreamWriter(fileName);
+                foreach (Postcode item in list)
+                {
+                    // One of the most versatile and useful additions to the C# language in version 6
+                    // is the null conditional operator ?.           
+                    writer.Write("{0}{5}{1}{5}{2}{5}{3}{5}{4}",
+                        item?.Code,
+                        item?.Plaats,
+                        item?.Provincie,
+                        item?.Localite,
+                        item?.Province,
+                        separator);
+                }
+
+                message = $"Het bestand met de naam {fileName} is gemaakt!";
+
+            }
+            catch (Exception e )
+            {
+                // Melding aan de gebruiker dat iets verkeerd gelopen is.
+                // We gebruiken hier de nieuwe mogelijkheid van C# 6: string interpolatie
+                message = $"Kan het bestand met de naam {fileName} niet maken.\nFoutmelding {e.Message}.";
+            }
+            return message;
+        }
+
     }
+    
 }
