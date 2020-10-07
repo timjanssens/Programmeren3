@@ -5,13 +5,15 @@ using System.IO;
 
 namespace Les07DemoTekstbestandInlezen
 {
-    class Postcode
+    public class Postcode
     {
         public string  Code { get; set; }
         public string Plaats { get; set; }
         public string Provincie { get; set; }
         public string Localite { get; set; }
         public string Province { get; set; }
+
+
 
 
 

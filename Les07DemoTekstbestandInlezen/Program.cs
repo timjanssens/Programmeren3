@@ -20,6 +20,9 @@ namespace Les07DemoTekstbestandInlezen
             Console.WriteLine(TryOut.SerializeObjectToCsv(TryOut.GetPostcodeList(), "|"));
 
 
+            TryOut.SerializeCsvToXml();
+            TryOut.ListPostcodes(TryOut.GetPostcodeListFromXml());
+
             Console.ReadKey();
         }
     }

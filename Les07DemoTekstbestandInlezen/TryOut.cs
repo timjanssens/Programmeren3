@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Xml.Serialization;
 
 namespace Les07DemoTekstbestandInlezen
 {
@@ -39,7 +40,7 @@ namespace Les07DemoTekstbestandInlezen
                 }
             }
 
-             return list;
+            return list;
         }
         public static Postcode PostcodeCsvToObject(string line)
         {
@@ -94,7 +95,7 @@ namespace Les07DemoTekstbestandInlezen
                 message = $"Het bestand met de naam {fileName} is gemaakt!";
 
             }
-            catch (Exception e )
+            catch (Exception e)
             {
                 // Melding aan de gebruiker dat iets verkeerd gelopen is.
                 // We gebruiken hier de nieuwe mogelijkheid van C# 6: string interpolatie
@@ -103,6 +104,46 @@ namespace Les07DemoTekstbestandInlezen
             return message;
         }
 
-    }
-    
+        public static Postcode[] GetPostcodeArray()
+        {
+            string[] lines = TryOut.ReadFromCSVFile().Split('\n');
+            Postcode[] postcodes = new Postcode[lines.Length];
+            int i = 0;
+            foreach (string s in lines)
+            {
+                if (s.Length > 0)
+                {
+                    postcodes[i++] = TryOut.PostcodeCsvToObject(s);
+                }
+            }
+            return postcodes;
+        }
+
+
+        public static void SerializeCsvToXml()
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(Postcode[]));
+            Postcode postcode = new Postcode(); 
+            TextWriter writer = new StreamWriter(@"Data/Postcode.xml");
+            //De serializer werkt niet voor een generieke lijst en ook niet voor ArrayList
+            Postcode[] postcodes = GetPostcodeArray();
+            serializer.Serialize(writer, postcodes);
+            writer.Close();
+        }
+
+
+
+        //En nu nog een methode om de postcodes om te zetten van XML formaat naar een List met Postcode objecten.
+        public static List<Postcode> GetPostcodeListFromXml()
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(Postcode[]));
+            Postcode postcode = new Postcode(); 
+            StreamReader file = new System.IO.StreamReader(@"Data/Postcode.xml");
+            Postcode[] postcodes = (Postcode[])serializer.Deserialize(file);
+            file.Close();
+            // array converteren naar List
+            return new List<Postcode>(postcodes);
+        }
+
+    } 
 }
