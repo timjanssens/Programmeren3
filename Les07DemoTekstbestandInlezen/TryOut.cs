@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
@@ -54,6 +55,10 @@ namespace Les07DemoTekstbestandInlezen
             return postcode;
         }
 
+        /// <summary>
+        /// We maken nu een presentation methode om de postcodes in de console te tonen.
+        /// </summary>
+        /// <param name="list"></param>
         public static void ListPostcodes(List<Postcode> list)
         {
             foreach (Postcode postcode in list)
@@ -104,6 +109,10 @@ namespace Les07DemoTekstbestandInlezen
             return message;
         }
 
+        /// <summary>
+        /// Volgens de documentatie kan je geen List of ArrayList serialiseren, alleen gewone arrays. daarom maken we de methode om om te zetten in Array
+        /// </summary>
+        /// <returns></returns>
         public static Postcode[] GetPostcodeArray()
         {
             string[] lines = TryOut.ReadFromCSVFile().Split('\n');
@@ -133,16 +142,40 @@ namespace Les07DemoTekstbestandInlezen
 
 
 
-        //En nu nog een methode om de postcodes om te zetten van XML formaat naar een List met Postcode objecten.
+        /// <summary>
+        /// Een methode om de postcodes om te zetten van XML formaat naar een List met Postcode objecten.
+        /// </summary>
+        /// <returns></returns>
         public static List<Postcode> GetPostcodeListFromXml()
         {
             XmlSerializer serializer = new XmlSerializer(typeof(Postcode[]));
             Postcode postcode = new Postcode(); 
-            StreamReader file = new System.IO.StreamReader(@"Data/Postcode.xml");
+            StreamReader file = new StreamReader(@"Data/Postcode.xml");
             Postcode[] postcodes = (Postcode[])serializer.Deserialize(file);
             file.Close();
             // array converteren naar List
             return new List<Postcode>(postcodes);
+        }
+
+        public static void SerializeCsvToJson()
+        {
+            Postcode postcode = new Postcode();
+            TextWriter writer = new StreamWriter(@"Data/Postcode.json");
+            //De serializer werkt niet voor een generieke lijst en ook niet voor ArrayList
+            List<Postcode> postcodeList = GetPostcodeList();
+            // static method SerilizeObject van Newtonsoft.Json
+            string postcodeString = JsonConvert.SerializeObject(postcodeList);
+            writer.WriteLine(postcodeString);
+            writer.Close();
+        }
+
+        public static List<Postcode> GetPostcodeListFromJson()
+        {
+            Helpers.Tekstbestand bestand = new Helpers.Tekstbestand();
+            bestand.FileName = @"Data/Postcode.json";
+            bestand.Lees();
+            List<Postcode> list = JsonConvert.DeserializeObject<List<Postcode>>(bestand.Text);
+            return list;
         }
 
     } 
