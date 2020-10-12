@@ -33,6 +33,9 @@ Thumbs.db
 *.exe
 *.war
 
+# Solutions School
+OplossingenLessen/
+
 # Large media files
 *.mp4
 *.tiff
