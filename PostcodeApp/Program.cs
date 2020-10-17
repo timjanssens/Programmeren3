@@ -6,9 +6,9 @@ namespace PostcodeApp
     {
         static void Main(string[] args)
         {
-            TryOutCsv();
+          //  TryOutCsv();
             TryOutXml();
-            TryOutJson();
+          //  TryOutJson();
             Console.ReadLine();
         }
 

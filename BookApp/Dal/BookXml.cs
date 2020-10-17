@@ -6,12 +6,12 @@ using System.Xml.Serialization;
 
 namespace BookApp.Dal
 {
-    class BookXml
+    class BookXml : IBook
     {
-        Bll.Book Book { get; set; }
+        public Bll.Book Book { get; set; }
         // Error message
-        string Message { get; set; }
-        private string connectionString;
+        public string Message { get; set; }
+        private string connectionString = @"Data/Book";
 
         public string ConnectionString
         {
@@ -22,7 +22,7 @@ namespace BookApp.Dal
 
         public BookXml(Bll.Book book)
         {
-            this.Book = book;
+            Book = book;
         }
         /// <summary>
         /// Overload to give name to file
@@ -30,48 +30,29 @@ namespace BookApp.Dal
         /// <param name="connectionString"></param>
         public BookXml(string connectionString)
         {
-            this.ConnectionString = connectionString;
+           
+            ConnectionString = connectionString;
         }
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        bool ReadAll()
-        {
-            try
-            {
-                XmlSerializer serializer = new XmlSerializer(typeof(Bll.Book[]));
-                StreamReader file = new StreamReader(ConnectionString);
-                Bll.Book[] books = (Bll.Book[])serializer.Deserialize(file);
-                file.Close();
-                // Convert array to List
-                Book.BookList = new List<Bll.Book>(books);
-                Message = $"Bestand {ConnectionString} is met succes gedeserialiseerd.";
-                return true;
-            }
-            catch (Exception e)
-            {
-                // Melding aan de gebruiker dat iets verkeerd gelopen is.
-                // We gebruiken hier de nieuwe mogelijkheid van C# 6: string interpolatie
-                Message = $"Het bestand {ConnectionString} s niet gedeserialiseerd.\nFoutmelding {e.Message}.";
-                return false;
-            }
-        }
+       
 
         /// <summary>
         /// if there is an XML the list gets saved
         /// </summary>
         /// <returns></returns>
-        bool Create()
+        public bool Create()
         {
             try
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(Bll.Book[]));
                 TextWriter writer = new StreamWriter(ConnectionString);
                 //serializer does not work with list => make an array
-                Bll.Book[] books = Book.BookList.ToArray();
-                serializer.Serialize(writer, books);
+                Bll.Book[] booken = Book.List.ToArray();
+                serializer.Serialize(writer, booken);
                 writer.Close();
 
                 Message = $"Bestand {ConnectionString} is met succes geserialiseerd.";
@@ -84,6 +65,28 @@ namespace BookApp.Dal
                 return false;
             }
 
+        }
+
+        public bool ReadAll()
+        {
+            try
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(Bll.Book[]));
+                StreamReader file = new StreamReader(ConnectionString);
+                Bll.Book[] book = (Bll.Book[])serializer.Deserialize(file);
+                file.Close();
+                // Convert array to List
+                Book.List = new List<Bll.Book>(book);
+                Message = $"Bestand {ConnectionString} is met succes gedeserialiseerd.";
+                return true;
+            }
+            catch (Exception e)
+            {
+                // Melding aan de gebruiker dat iets verkeerd gelopen is.
+                // We gebruiken hier de nieuwe mogelijkheid van C# 6: string interpolatie
+                Message = $"Het bestand {ConnectionString} is niet gedeserialiseerd.\nFoutmelding {e.Message}.";
+                return false;
+            }
         }
     }
 }

@@ -6,5 +6,6 @@ namespace BookApp.Dal
 {
     class BookJson
     {
+
     }
 }
