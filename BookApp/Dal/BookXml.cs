@@ -34,14 +34,10 @@ namespace BookApp.Dal
             ConnectionString = connectionString;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
        
 
         /// <summary>
-        /// if there is an XML the list gets saved
+        /// make an XML from the list
         /// </summary>
         /// <returns></returns>
         public bool Create()
@@ -67,6 +63,10 @@ namespace BookApp.Dal
 
         }
 
+        /// <summary>
+        /// if there is an XML the list gets saved
+        /// </summary>
+        /// <returns></returns>
         public bool ReadAll()
         {
             try

@@ -14,13 +14,7 @@ namespace BookApp.Bll
         public string Edition { get; set; }
         public string Translator { get; set; }
         public string Comment { get; set; }
-        private List<Book> list;
-
-        public List<Book> List 
-        {
-            get { return list; }
-            set { list = value; }
-        }
+        public List<Book> List { get; set; }
 
     }
 }
