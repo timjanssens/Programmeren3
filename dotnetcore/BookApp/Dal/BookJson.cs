@@ -62,8 +62,10 @@ namespace BookApp.Dal
                 Helpers.Tekstbestand bestand = new Helpers.Tekstbestand();
                 bestand.FileName = ConnectionString;
                 bestand.Lees();
+               
                 Book.List = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Bll.Book>>(bestand.Text);
-                Message = $"Het bestand met de naam {ConnectionString} is met succes geserialiseerd.";
+                
+                Message = $"Het bestand met de naam {ConnectionString} is met succes gedeserialiseerd.";
                 return true;
             }
             catch (Exception e)

@@ -72,17 +72,43 @@ namespace BookApp.Dal
         {
             try
             {
-                XmlRootAttribute xRoot = new XmlRootAttribute();
-                xRoot.ElementName = "Books";
-                xRoot.IsNullable = true;
-                XmlSerializer serializer = new XmlSerializer(typeof(Bll.Book[]), xRoot);
-                StreamReader file = new StreamReader(ConnectionString);
-                Bll.Book[] book = (Bll.Book[])serializer.Deserialize(file);
-                file.Close();
+                if (ConnectionString == @"Data/Book.xml")
+                {
+                    XmlRootAttribute xRoot = new XmlRootAttribute();
+                    xRoot.ElementName = "Books";
+                    xRoot.IsNullable = true;
+                    XmlSerializer serializer = new XmlSerializer(typeof(Bll.Book[]), xRoot);
+                    StreamReader file = new StreamReader(ConnectionString);
+                    Bll.Book[] book = (Bll.Book[])serializer.Deserialize(file);
+                    file.Close();
+                    Book.List = new List<Bll.Book>(book);
+                }
+                else
+                {
+                    XmlRootAttribute xRoot = new XmlRootAttribute();
+                    xRoot.ElementName = "ArrayOfBook";
+                    xRoot.IsNullable = true;
+                    XmlSerializer serializer = new XmlSerializer(typeof(Bll.Book[]), xRoot);
+                    StreamReader file = new StreamReader(ConnectionString);
+                    Bll.Book[] book = (Bll.Book[])serializer.Deserialize(file);
+                    file.Close();
+                    Book.List = new List<Bll.Book>(book);
+                }
                 // Convert array to List
-                Book.List = new List<Bll.Book>(book);
                 Message = $"Bestand {ConnectionString} is met succes gedeserialiseerd.";
                 return true;
+
+                //XmlRootAttribute xRoot = new XmlRootAttribute();
+                //xRoot.ElementName = "Books";
+                //xRoot.IsNullable = true;
+                //XmlSerializer serializer = new XmlSerializer(typeof(Bll.Book[]), xRoot);
+                //StreamReader file = new StreamReader(ConnectionString);
+                //Bll.Book[] book = (Bll.Book[])serializer.Deserialize(file);
+                //file.Close();
+                //// Convert array to List
+                //Book.List = new List<Bll.Book>(book);
+                //Message = $"Bestand {ConnectionString} is met succes gedeserialiseerd.";
+                //return true;
             }
             catch (Exception e)
             {

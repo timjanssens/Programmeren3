@@ -12,7 +12,7 @@ namespace BookApp
             CreateCsvFromXml();
             PrintCsv();
             CreateJsonFromXml();
-           // PrintJson();
+            PrintJson();
             Console.ReadKey();
         }
 
