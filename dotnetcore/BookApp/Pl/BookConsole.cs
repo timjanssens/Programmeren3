@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookApp.Bll;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -20,7 +21,7 @@ namespace BookApp.View
         {
 
 
-            foreach (Bll.Book book in Model.List)
+            foreach (Bll.Book book in Book.List)
             {
                 Console.WriteLine($"{book?.Title} - {book?.Author} - {book?.Year} - {book?.City}" +
                     $" - {book?.Publisher} - {book?.Edition} - {book?.Translator} - {book?.Comment}");

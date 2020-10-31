@@ -19,7 +19,6 @@ namespace BookApp.Bll
                 }
                 else
                 {
-                    // title = value.Replace("\n", string.Empty).Replace("  ", " ").TrimStart();
                     string text = value.Replace("\n", string.Empty).TrimStart();
                     //use regex to replace all double spaces
                     title = Regex.Replace(text, @"\s+", " ");
@@ -42,6 +41,6 @@ namespace BookApp.Bll
         public string Edition { get; set; }
         public string Translator { get; set; }
         public string Comment { get; set; }
-        public List<Book> List { get; set; } 
+        public static List<Book> List { get; set; } = new List<Book>();
     }
 }
