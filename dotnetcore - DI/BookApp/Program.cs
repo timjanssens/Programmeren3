@@ -22,7 +22,7 @@ namespace BookApp
         private static void ConfigureServices(IServiceCollection serviceCollection)
         {
             //add services
-            serviceCollection.AddSingleton<Dal.IBook>(p => new Dal.BookCsv(new Bll.Book()));
+            serviceCollection.AddSingleton<Dal.IBook>(p => new Dal.BookXml(new Bll.Book()));
             //add app
             serviceCollection.AddTransient<App>();
         }

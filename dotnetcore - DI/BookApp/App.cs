@@ -15,10 +15,15 @@ namespace BookApp
         public void TryOut()
         {
             Console.WriteLine("De BookApp");
-            // de seperator staat standaard op ;
-            // in het Postcode.csv bestand is dat |
-          //  dal.Separator = '|';
-            dal.ReadAll();
+ 
+
+            Bll.Book book = new Bll.Book();
+            Dal.BookXml bookXml = new Dal.BookXml(book);
+            bookXml.Book = book;
+            bookXml.ReadAll();
+            //Console.WriteLine(bookXml.Message);
+                                    
+            //dal.ReadAll();
             Console.WriteLine(dal.Message);
             View.BookConsole view = new View.BookConsole(dal.Book);
             view.List();
