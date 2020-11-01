@@ -16,13 +16,13 @@ namespace BookApp
         {
             Console.WriteLine("De BookApp");
  
-
+            //omdat er altijd van Book.Xml vertrokken wordt => hard coded ipv DI
             Bll.Book book = new Bll.Book();
             Dal.BookXml bookXml = new Dal.BookXml(book);
             bookXml.Book = book;
             bookXml.ReadAll();
-            //Console.WriteLine(bookXml.Message);
-                                    
+                                           
+            //was zo in vb bij postcode maar hier wordt altijd naar Xml basis gekeken
             //dal.ReadAll();
             Console.WriteLine(dal.Message);
             View.BookConsole view = new View.BookConsole(dal.Book);
