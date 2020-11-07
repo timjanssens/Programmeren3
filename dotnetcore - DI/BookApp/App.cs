@@ -21,9 +21,13 @@ namespace BookApp
             Dal.BookXml bookXml = new Dal.BookXml(book);
             bookXml.Book = book;
             bookXml.ReadAll();
-                                           
-            //was zo in vb bij postcode maar hier wordt altijd naar Xml basis gekeken
+
+            //als er zowel csv als json als xml aanwezig waren kon met DI gewerkt worden zoals hieronder
+            //dal.Separator = '|';
             //dal.ReadAll();
+
+
+          //Verder werken met DI
             Console.WriteLine(dal.Message);
             View.BookConsole view = new View.BookConsole(dal.Book);
             view.List();
