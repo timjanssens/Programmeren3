@@ -26,15 +26,19 @@ namespace aspdotnet
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseRouting();
+
+            app.UseDefaultFiles();
+            app.UseStaticFiles(); // For the wwwroot folder
+ 
+            /* app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGet("/", async context =>
                 {
-                    await context.Response.WriteAsync("Hello World @ AP Hogeschool!");
+                    await context.Response.WriteAsync("Hello World!");
                 });
-            });
+            });  */
         }
     }
 }

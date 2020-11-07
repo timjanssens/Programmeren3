@@ -1,0 +1,89 @@
+body {
+    font-family: Georgia, serif;
+    padding: 0 20% 0 20%;
+}
+
+section {
+    text-transform: uppercase;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif
+}
+
+article>header {
+    font-size: larger;
+}
+
+article>address {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: small;
+    font-style: normal;
+}
+
+article figure figcaption {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+article figure figcaption span {
+    font-weight: bold;
+}
+
+article>figure img {
+    height: 10rem;
+    float: left;
+    /* shorthand property */
+    margin: 0 1rem 1rem 0;
+}
+
+/* adjacent sibling combinator (+) 
+selecteert het element dat direct volgt op het eerste opgegeven element */
+article figure+p {
+    clear: both;
+}
+
+article>figure {
+    border-top: solid black 1px;
+    border-bottom: solid black 1px;
+    height: 12rem;
+    padding-top: 1rem;
+}
+
+blockquote {
+    border-top: solid black 1px;
+    padding: 1rem 0 0 0;
+    text-align: center;
+    margin: 1rem 10% 1rem 10%;
+    font-weight: bold;
+    font-style: italic;
+}
+
+article footer>p {
+    color: #808080;
+}
+
+article footer figcaption a {
+    color: rgb(255, 0, 0);
+}
+
+article footer figure figcaption p {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: x-large;
+    margin: 0 0 0 0;
+ }
+
+article footer figure figcaption p+p {
+    text-transform: none;
+    font-size: 1em;
+    font-family: Georgia, serif;
+}
+
+article footer figure img {
+    height: 5rem;
+    float: left;
+    padding-right: 1rem;
+}
+
+article footer {
+    border: solid #C0C0C0 1px;
+    padding-left: 1em;
+}
