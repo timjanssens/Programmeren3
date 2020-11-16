@@ -26,7 +26,10 @@ namespace Aspdotnet
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseRouting();
+            app.UseDefaultFiles(); 
+	    app.UseStaticFiles();
+
+            /* app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
@@ -34,7 +37,7 @@ namespace Aspdotnet
                 {
                     await context.Response.WriteAsync("Hello World!");
                 });
-            });
+            }); */
         }
     }
 }
