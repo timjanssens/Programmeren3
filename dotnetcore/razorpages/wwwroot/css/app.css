@@ -1,0 +1,81 @@
+﻿body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+figure {
+    text-align: center;
+    border: solid 1px #ccc;
+    border-radius: 2px;
+    background: rgba(0,0,0,0.05);
+    padding: 10px;
+    margin: 10px 20px;
+    display: inline-block;
+    float: left;
+}
+
+    figure > figcaption {
+        text-align: center;
+        display: block; /* For IE8 */
+    }
+
+header {
+    display: flex;
+}
+
+.logo {
+    display: block;
+    flex-grow: 0.2;
+    flex-shrink: 0;
+    flex-basis: 160px;
+}
+
+    .logo img {
+        height: 130px
+    }
+
+.horizontal-nav {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+
+    .horizontal-nav a {
+        margin-left: 4rem;
+        text-decoration: none;
+        cursor: pointer;
+        color: #E20513;
+        /* AP rood */
+        font-size: 1.4rem;
+        position: relative;
+    }
+
+        .horizontal-nav a::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: '';
+            border-bottom: #AD0F09 solid 3px;
+            /* AP donker rood */
+            width: 0;
+            background: transparent;
+            transition: width .2s ease, border-bottom .3s ease;
+            text-align: center;
+            height: 2rem;
+        }
+
+        .horizontal-nav a:hover::after, .horizontal-nav a.selected:after {
+            width: 100%;
+        }
+
+@media (min-width: 800px) {
+    .logo img {
+        height: 180px;
+    }
+
+    .horizontal-nav {
+        flex-direction: row;
+    }
+}

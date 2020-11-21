@@ -1,0 +1,52 @@
+﻿@page
+@model razorpages.Pages.PostcodeModel
+@{
+    ViewData["Title"] = "Postcodes Belgie";
+}
+
+
+<h1>Postcodes</h1>
+
+<table class="list">
+    <thead>
+        <tr>
+            <th>
+                Postcode
+            </th>
+            <th>
+                Plaats
+            </th>
+            <th>
+                Provincie
+            </th>
+            <th>
+                Localité
+            </th>
+            <th>
+                Province
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Postcode.List)
+        {
+            <tr>
+                <td>
+                    @item.Code
+                </td>
+                <td>
+                    @item.Plaats
+                </td>
+                <td>
+                    @item.Provincie
+                </td>
+                <td>
+                    @item.Localite
+                </td>
+                <td>
+                    @item.Province
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
