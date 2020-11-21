@@ -25,6 +25,8 @@ namespace razorpages
             services.AddRazorPages();
             services.AddSingleton<PostcodeApp.Dal.IPostcode>
                   (p => new PostcodeApp.Dal.PostcodeXml(new PostcodeApp.Bll.Postcode()));
+            services.AddSingleton<BookApp.Dal.IBook>
+                (p => new BookApp.Dal.BookXml(new BookApp.Bll.Book()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

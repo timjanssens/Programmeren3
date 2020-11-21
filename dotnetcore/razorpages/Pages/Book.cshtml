@@ -1,0 +1,47 @@
+﻿@page
+@model razorpages.Pages.BookModel
+@{
+    ViewData["Title"] = "Boekenoverzicht";
+}
+
+<h1>Boeken</h1>
+<table>
+    <thead>
+        <tr>
+            <th>
+                Titel
+            </th>
+            <th>
+                Auteur
+            </th>
+            <th>
+                Jaar
+            </th>
+            <th>
+                Uitgeverij
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @*use the static list instead of the propertie*@
+        @foreach (var item in BookApp.Bll.Book.List)
+        {
+            <tr>
+                <td>
+                    @item.Title
+                </td>
+                <td>
+                    @item.Author
+                </td>
+                <td>
+                    @item.Year
+                </td>
+                <td>
+                    @item.Publisher
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
