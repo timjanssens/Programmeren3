@@ -1,25 +1,42 @@
 ﻿body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 1050px;
+    margin: auto;
 }
 
-figure {
-    text-align: center;
-    border: solid 1px #ccc;
-    border-radius: 2px;
-    background: rgba(0,0,0,0.05);
-    padding: 10px;
-    margin: 10px 20px;
-    display: inline-block;
-    float: left;
-}
+/*css layout/assignment*/
 
-    figure > figcaption {
-        text-align: center;
-        display: block; /* For IE8 */
-    }
 
 header {
     display: flex;
+    justify-content: space-between;
+}
+
+table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    td, th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+   tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+  tr:hover {
+        background-color: #ddd;
+    }
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #B90604;
+    color: white;
 }
 
 .logo {
@@ -40,6 +57,7 @@ header {
     align-self: center;
     display: flex;
     flex-direction: column;
+    margin-right: 35px;
 }
 
     .horizontal-nav a {
@@ -47,7 +65,6 @@ header {
         text-decoration: none;
         cursor: pointer;
         color: #E20513;
-        /* AP rood */
         font-size: 1.4rem;
         position: relative;
     }
@@ -70,12 +87,71 @@ header {
             width: 100%;
         }
 
+        footer{
+         text-align: right;
+        }
+
+/*css pics*/
+figure {
+    text-align: center;
+    border: solid 1px #ccc;
+    border-radius: 2px;
+    background: rgba(0,0,0,0.05);
+    padding: 10px;
+    margin: 10px 0px;
+    display: inline-block;
+    height: 100%;
+}
+/*prevent figure to expand*/
+.maxHeight {
+    height: 100%;
+   
+}
+
+article{
+    display: flex;
+}
+
+    figure > figcaption {
+        text-align: center;
+        display: block; /* For IE8 */
+       
+    }
+
+    figure img{
+        width: 350px;
+    }
+
+h1{
+    text-align: center;
+}
+.centerText{
+    text-align: center;
+}
+
+.alignLeft {
+    text-align: left;
+
+}
+
+article div{
+    margin: 5px;
+}
+
+
+
+
+
+
 @media (min-width: 800px) {
     .logo img {
         height: 180px;
     }
+    
 
+    
     .horizontal-nav {
         flex-direction: row;
     }
 }
+

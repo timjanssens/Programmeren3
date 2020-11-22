@@ -3,18 +3,22 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="~/css/app.css"/>
+    <link rel="stylesheet" href="~/css/app.css" />
     <title>@ViewBag.Title</title>
 </head>
 <body>
     <header>
+
         <a class="logo" href="/Index"><img src="image/logo.jpg"></a>
+
+
         <nav class="horizontal-nav">
             <a href="/Index">Home</a>
             <a href="/Postcode">Postcode</a>
             <a href="/Book">Boek</a>
             <a href="/AboutMe">Over mij</a>
         </nav>
+
     </header>
     <main>
         @RenderBody()
