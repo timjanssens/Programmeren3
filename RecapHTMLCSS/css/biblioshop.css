@@ -22,14 +22,17 @@ body {
                      "uitleg" 
                      "showroom" 
 					 "voet";
-	grid-template-rows: 80px 100px 1fr 70px;
+	grid-template-rows: 130px 100px 1fr 70px;
 	grid-template-columns: 1fr;
 	grid-row-gap: 10px;
 	grid-column-gap: 10px;
 }
 
 .head {
-    grid-area: kop;
+	grid-area: kop;
+	display: flex;
+	justify-content: space-between;
+	padding-right: 25px;
 }
 
 .foot {
@@ -48,24 +51,178 @@ body {
 	grid-area: zijbalk;
 	/* Don't show aside in mobile view */
 	display: none;
+	padding: 2em;
+}
+.sidebar ul {
+    list-style-position: inside;
 }
 
-.head, .foot, .show-room, .sidebar, .explanation {
+.foot, .show-room, .sidebar, .explanation {
     padding: 1.2em;
-    background: yellowgreen;
+	border: solid 1px darkgrey;
 }
 
+
+.logo {
+    display: block;
+    flex-grow: 0.2;
+    flex-shrink: 0;
+    flex-basis: 160px;
+}
+
+.logo img {
+    height: 130px
+}
+
+.horizontal-nav {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.horizontal-nav a {
+    margin-left: 4rem;
+    text-decoration: none;
+    cursor: pointer;
+    color: #E20513;
+    /* AP rood */
+    font-size: 1.4rem;
+    position: relative;
+}
+
+.horizontal-nav a::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    border-bottom: #AD0F09 solid 3px;
+    /* AP donker rood */
+    width: 0;
+    background: transparent;
+    transition: width .2s ease, border-bottom .3s ease;
+    text-align: center;
+    height: 2rem;
+}
+
+.horizontal-nav a.selected:after {
+	width: 100%;
+}
+
+
+.horizontal-nav a:hover::after {
+    width: 100%;
+}
+
+
+
+.logo img {
+    height: 130px;
+    margin: 10px 0 0 10px;
+}
+
+.overview {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.detail {
+	display: none;
+	border: solid black 1px;
+    padding: 0.5em;
+}
+
+.overview>article {
+    display: flex;
+    flex-direction: column; 
+    flex-basis: 200px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    /* border: solid black 1px;
+    padding: 1em; */
+    margin-top: 1em;
+}
+
+.overview>article img {
+    width: 100%;
+    /* even breed als article */
+}
+.overview>article figcaption {
+    font-size: smaller;
+}
+
+
+.overview>article figcaption address {
+    font-style: normal;
+}
+
+.overview article figure {
+    border: solid black 1px;
+    padding: 0.5em;
+}
+
+/* als er op het artikel geklikt wordt, niet tonen */
+
+article:target > figure {
+    display:none;
+}
+
+
+/* nadat op artikel geklikt is, details tonen */
+article:target > div.detail {
+    display:block;
+}
+
+article:target {
+    flex-basis: 600px;
+}
+
+article > div.detail > img {
+    width: 60%;
+    margin: 0 20%;
+}
+
+div.detail .description, div.detail .subtitle {
+    font-size: smaller;
+}
+
+div.detail p span {
+    color: darkgrey;
+}
 
 @media all and (min-width: 575px) {
+	
 	body{
 		grid-template-areas: "kop kop" 
         	         "zijbalk uitleg" 
                      "zijbalk showroom" 
 					 "voet voet";
-		grid-template-rows: 80px 70px 1fr 70px;
-		grid-template-columns: 20% 1fr;
+		grid-template-rows: 120px 70px 1fr 70px;
+		grid-template-columns: 12em 1fr;
 	}
 	.sidebar {
 		display: block;
 	}
+}
+
+@media (min-width: 800px) {
+    .logo img {
+        height: 120px;
+        margin: 0;
+	}
+	article > div.detail > img {
+        width: 12rem;
+        margin: 0 5% 0 0;
+        float: left;
+    }
+
+    .horizontal-nav {
+        flex-direction: row;
+    }
 }
