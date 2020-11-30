@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    width: 100%
+}
+
+
+
+
+body {
+    height: 100%;
+    width: 100%;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	/* define mobile grid (Mobile-First) */
+	display: grid;
+	grid-template-areas: "kop" 
+                     "uitleg" 
+                     "showroom" 
+					 "voet";
+	grid-template-rows: 80px 100px 1fr 70px;
+	grid-template-columns: 1fr;
+	grid-row-gap: 10px;
+	grid-column-gap: 10px;
+}
+
+.head {
+    grid-area: kop;
+}
+
+.foot {
+    grid-area: voet;
+}
+
+.show-room {
+    grid-area: showroom;
+}
+
+.explanation {
+    grid-area: uitleg;
+}
+
+.sidebar {
+	grid-area: zijbalk;
+	/* Don't show aside in mobile view */
+	display: none;
+}
+
+.head, .foot, .show-room, .sidebar, .explanation {
+    padding: 1.2em;
+    background: yellowgreen;
+}
+
+
+@media all and (min-width: 575px) {
+	body{
+		grid-template-areas: "kop kop" 
+        	         "zijbalk uitleg" 
+                     "zijbalk showroom" 
+					 "voet voet";
+		grid-template-rows: 80px 70px 1fr 70px;
+		grid-template-columns: 20% 1fr;
+	}
+	.sidebar {
+		display: block;
+	}
+}
