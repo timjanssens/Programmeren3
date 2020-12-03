@@ -1,0 +1,38 @@
+﻿@page
+@model BiblioAdmin.Pages.OrderStatus.IndexModel
+@{
+}
+
+<h1>Order Status</h1>
+
+<table class="list">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Naam
+            </th>
+            <th>
+                Beschrijving
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.OrderStatusList)
+        {
+            <tr>
+                <td>
+                    @item.Id
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Description
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

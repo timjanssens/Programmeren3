@@ -26,8 +26,7 @@ namespace BiblioAdmin.Bll
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseMySql("server=51.38.37.150;user id=Student7;password=S;port=3306;database=Student7;sslmode=none", x => x.ServerVersion("5.7.32-mysql"));
+
             }
         }
 
