@@ -1,11 +1,9 @@
 ﻿@page "{id}"
-@model BiblioAdmin.Pages.OrderItem.ReadingOneModel
+@model BiblioAdmin.Pages.ShippingMethod.ReadingOneModel
 @{
 }
 
-
-
-<h1>Order Item ReadingOne</h1>
+<h1>ShippingMethod ReadingOne</h1>
 <nav class="control-panel">
     <a href="/Index">
         <span>Hier komt het logo</span>
@@ -15,40 +13,40 @@
 <div class="show-room entity">
     <div class="detail">
         <div class="command-panel">
-            <h2>Order Item</h2>
-            <a href="/OrderItem/UpdatingOne/@Model.OrderItem.Id" class="tile">
+            <h2>Shipping Method</h2>
+            <a href="/ShippingMethod/UpdatingOne/@Model.ShippingMethod.Id" class="tile">
                 <span class="icon-pencil"></span>
                 <span class="screen-reader-text">Updating One</span>
             </a>
-            <a href="/OrderStatus/InsertingOne" class="tile">
+            <a href="/ShippingMethod/InsertingOne" class="tile">
                 <span class="icon-plus"></span>
                 <span class="screen-reader-text">Inserting One</span>
             </a>
-            <a href="/OrderItem/DeleteOne/@Model.OrderItem.Id" class="tile">
+            <a href="/ShippingMethod/DeleteOne/@Model.ShippingMethod.Id" class="tile">
                 <span class="icon-remove"></span>
                 <span class="screen-reader-text">Delete One</span>
             </a>
-            <a href="/OrderItem/Cancel" class="tile">
+            <a href="/ShippingMethod/Cancel" class="tile">
                 <span class="icon-close"></span>
                 <span class="screen-reader-text">Annuleren</span>
             </a>
         </div>
         <fieldset>
             <div>
-                <label for="OrderItem-Id">Id</label>
-                <input id="OrderItem-Id" name="OrderItem-Id" type="text" value="@Model.OrderItem.Id" readonly>
+                <label for="ShippingMethod-Id">Id</label>
+                <input id="ShippingMethod-Id" name="ShippingMethod-Id" type="text" value="@Model.ShippingMethod.Id" readonly>
             </div>
             <div>
-                <label for="OrderItem-BookId">Naam</label>
-                <input id="OrderItem-BookId" name="OrderItem-BookId" type="text" value="@Model.OrderItem.BookId" readonly>
+                <label for="ShippingMethod-Name">Naam</label>
+                <input id="ShippingMethod-Name" name="ShippingMethod-Name" type="text" value="@Model.ShippingMethod.Name" readonly>
             </div>
             <div>
-                <label for="OrderItem-OrderId">Order Nummer</label>
-                <input id="OrderItem-OrderId" name="OrderItem-OrderId" type="text" value="@Model.OrderItem.OrderId" readonly>
+                <label for="ShippingMethod-Description">Beschrijving</label>
+                <textarea id="ShippingMethod-Description" name="ShippingMethod-Description" type="text" readonly>@Model.ShippingMethod.Description</textarea>
             </div>
             <div>
-                <label for="OrderItem-Quantity">Hoeveelheid</label>
-                <input id="OrderItem-Quantity" name="OrderItem-Quantity" type="text" value="@Model.OrderItem.Quantity" readonly>
+                <label for="ShippingMethod-Price">Prijs</label>
+                <input id="ShippingMethod-Price" name="ShippingMethod-Price" type="text" value="@Model.ShippingMethod.Price" readonly>
             </div>
         </fieldset>
         <div class="feedback"></div>
@@ -61,18 +59,18 @@
                         Id
                     </th>
                     <th>
-                        Book
+                        Naam
                     </th>
                     <th>
-                        Order nummer
+                        Beschrijving
                     </th>
                     <th>
-                        Hoeveelheid
+                        Prijs
                     </th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model.OrderItemList)
+                @foreach (var item in Model.ShippingMethodList)
                 {
                     <tr>
                         <td>
@@ -82,13 +80,13 @@
                             @item.Id
                         </td>
                         <td>
-                            @item.BookId
+                            @item.Name
                         </td>
                         <td>
-                            @item.OrderId
+                            @item.Description
                         </td>
                         <td>
-                            @item.Quantity
+                            @item.Price
                         </td>
                     </tr>
                 }
