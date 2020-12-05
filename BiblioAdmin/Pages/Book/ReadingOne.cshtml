@@ -1,0 +1,187 @@
+﻿@page "{id}"
+@model BiblioAdmin.Pages.Book.ReadingOneModel
+@{
+}
+
+
+<h1>Book ReadingOne</h1>
+<nav class="control-panel">
+    <a href="/Index">
+        <span>Hier komt het logo</span>
+    </a>
+    <h1 class="banner">Biblio Admin</h1>
+</nav>
+<div class="show-room entity">
+    <div class="detail">
+        <div class="command-panel">
+            <h2>Book</h2>
+            <a href="/Book/UpdatingOne/@Model.Book.Id" class="tile">
+                <span class="icon-pencil"></span>
+                <span class="screen-reader-text">Updating One</span>
+            </a>
+            <a href="/Book/InsertingOne" class="tile">
+                <span class="icon-plus"></span>
+                <span class="screen-reader-text">Inserting One</span>
+            </a>
+            <a href="/Book/DeleteOne/@Model.Book.Id" class="tile">
+                <span class="icon-remove"></span>
+                <span class="screen-reader-text">Delete One</span>
+            </a>
+            <a href="/Book/Cancel" class="tile">
+                <span class="icon-close"></span>
+                <span class="screen-reader-text">Annuleren</span>
+            </a>
+        </div>
+        <fieldset>
+            <div>
+                <label for="Book-Id">Id</label>
+                <input id="Book-Id" name="Book-Id" type="text" value="@Model.Book.Id" readonly>
+            </div>
+            <div>
+                <label for="Book-Author">Auteur</label>
+                <input id="Book-Author" name="Book-Author" type="text" value="@Model.Book.Author" readonly>
+            </div>
+            <div>
+                <label for="Book-Title">Titel</label>
+                <input id="Book-Title" name="Book-Title" type="text" value="@Model.Book.Title" readonly>
+            </div>
+            <div>
+                <label for="Book-ImageUrl">URL Cover</label>
+                <textarea id="Book-ImageUrl" name="Book-ImageUrl" type="text" readonly>@Model.Book.ImageUrl</textarea>
+            </div>
+            <div>
+                <label for="Book-Subtitle">Subtitel</label>
+                <input id="Book-Subtitle" name="Book-Title" type="text" value="@Model.Book.Subtitle" readonly>
+            </div>
+            <div>
+                <label for="Book-PublicationDate">Publicatiedatum</label>
+                <input id="Book-PublicationDate" name="Book-PublicationDate" type="text" value="@Model.Book.PublicationDate" readonly>
+            </div>
+            <div>
+                <label for="Book-Publisher">Uitgever</label>
+                <input id="Book-Publisher" name="Book-Publisher" type="text" value="@Model.Book.Publisher" readonly>
+            </div>
+            <div>
+                <label for="Book-Category">Categorie</label>
+                <input id="Book-Category" name="Book-Category" type="text" value="@Model.Book.Category" readonly>
+            </div>
+            <div>
+                <label for="Book-Price">Prijs</label>
+                <input id="Book-Price" name="Book-Price" type="text" value="@Model.Book.Price" readonly>
+            </div>
+            <div>
+                <label for="Book-Size">Afmetingen</label>
+                <input id="Book-Size" name="Book-Size" type="text" value="@Model.Book.Size" readonly>
+            </div>
+            <div>
+                <label for="Book-NumberOfPages">Aantal Pagina's</label>
+                <input id="Book-NumberOfPages" name="Book-NumberOfPages" type="text" value="@Model.Book.NumberOfPages" readonly>
+            </div>
+            <div>
+                <label for="Book-Language">Taal</label>
+                <input id="Book-Language" name="Book-Language" type="text" value="@Model.Book.Language" readonly>
+            </div>
+            <div>
+                <label for="Book-ProductCode">ISBN</label>
+                <input id="Book-ProductCode" name="Book-ProductCode" type="text" value="@Model.Book.ProductCode" readonly>
+            </div>
+            <div>
+                <label for="Book-ProductType">Product Type</label>
+                <input id="Book-ProductType" name="Book-ProductType" type="text" value="@Model.Book.ProductType" readonly>
+            </div>
+            <div>
+                <label for="Book-ProductTypeFull">Volledig product Type</label>
+                <input id="Book-ProductTypeFull" name="Book-ProductTypeFull" type="text" value="@Model.Book.ProductTypeFull" readonly>
+            </div>
+            <div>
+                <label for="Book-Description">Omschrijving</label>
+                <textarea id="Book-Description" name="Book-Description" type="text" readonly>@Model.Book.Description</textarea>
+            </div>
+        </fieldset>
+        <div class="feedback"></div>
+    </div>
+    <aside class="list">
+        <table class="list">
+            <thead>
+                <tr>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Cover
+                    </th>
+                    <th>
+                        Naam
+                    </th>
+                    <th>
+                        Beschrijving
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.BookList)
+                {
+                    <tr>
+                        <td>
+                            <a href="Book/ReadingOne/item.Id">-></a> |
+                        </td>
+                        <td>
+                            @item.Id
+                        </td>
+                        <td>
+                            <img src="@item.ImageUrl" alt="Sample Image" width="50px" />
+                        </td>
+                        <td>
+                            @item.Author
+                        </td>
+                        <td>
+                            @item.Title
+                        </td>
+                        @*
+                            <td>
+                                @item.ImageUrl
+                            </td>
+                            <td>
+                                @item.Subtitle
+                            </td>
+                            <td>
+                                @item.PublicationDate
+                            </td>
+                            <td>
+                                @item.Publisher
+                            </td>
+                            <td>
+                                @item.Category
+                            </td>
+                            <td>
+                                @item.Price
+                            </td>
+                            <td>
+                                @item.Size
+                            </td>
+                            <td>
+                                @item.NumberOfPages
+                            </td>
+
+                            <td>
+                                @item.Language
+                            </td>
+                            <td>
+                                @item.ProductCode
+                            </td>
+                            <td>
+                                @item.ProductType
+                            </td>
+                            <td>
+                                @item.ProductTypeFull
+                            </td>
+                            <td>
+                                @item.Description
+                            </td>
+                        *@
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </aside>
+</div>

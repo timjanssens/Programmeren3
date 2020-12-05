@@ -1,0 +1,82 @@
+﻿@page "{id}"
+@model BiblioAdmin.Pages.OrderStatus.ReadingOneModel
+@{
+}
+
+<h1>OrderStatus ReadingOne</h1>
+<nav class="control-panel">
+    <a href="/Index">
+        <span>Hier komt het logo</span>
+    </a>
+    <h1 class="banner">Biblio Admin</h1>
+</nav>
+<div class="show-room entity">
+    <div class="detail">
+        <div class="command-panel">
+            <h2>Order Status</h2>
+            <a href="/OrderStatus/UpdatingOne/@Model.OrderStatus.Id" class="tile">
+                <span class="icon-pencil"></span>
+                <span class="screen-reader-text">Updating One</span>
+            </a>
+            <a href="/OrderStatus/InsertingOne" class="tile">
+                <span class="icon-plus"></span>
+                <span class="screen-reader-text">Inserting One</span>
+            </a>
+            <a href="/OrderStatus/DeleteOne/@Model.OrderStatus.Id" class="tile">
+                <span class="icon-remove"></span>
+                <span class="screen-reader-text">Delete One</span>
+            </a>
+            <a href="/OrderStatus/Cancel" class="tile">
+                <span class="icon-close"></span>
+                <span class="screen-reader-text">Annuleren</span>
+            </a>
+        </div>
+        <fieldset>
+            <div>
+                <label for="OrderStatus-Name">Id</label>
+                <input id="OrderStatus-Name" name="OrderStatus-Name" type="text" value="@Model.OrderStatus.Id" readonly>
+            </div>
+            <div>
+                <label for="OrderStatus-Name">Naam</label>
+                <input id="OrderStatus-Name" name="OrderStatus-Name" type="text" value="@Model.OrderStatus.Name" readonly>
+            </div>
+            <div>
+                <label for="OrderStatus-Name">Beschrijving</label>
+                <textarea id="OrderStatus-Name" name="OrderStatus-Name" type="text" readonly>@Model.OrderStatus.Description</textarea>
+            </div>
+        </fieldset>
+        <div class="feedback"></div>
+    </div>
+    <aside class="list">
+        <table class="list">
+            <thead>
+                <tr>
+                    <th>
+                    </th>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Naam
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.OrderStatusList)
+                {
+                    <tr>
+                        <td>
+                            <a href="OrderStatus/ReadingOne/@item.Id">-></a> |
+                        </td>
+                        <td>
+                            @item.Id
+                        </td>
+                        <td>
+                            @item.Name
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </aside>
+</div>
