@@ -1,0 +1,127 @@
+﻿@page "{id}"
+@model BiblioAdmin.Pages.Order.ReadingOneModel
+@{
+}
+
+
+<h1>Order ReadingOne</h1>
+<nav class="control-panel">
+    <a href="/Index">
+        <span>Hier komt het logo</span>
+    </a>
+    <h1 class="banner">Biblio Admin</h1>
+</nav>
+<div class="show-room entity">
+    <div class="detail">
+        <div class="command-panel">
+            <h2>Order</h2>
+            <a href="/Order/UpdatingOne/@Model.Order.Id" class="tile">
+                <span class="icon-pencil"></span>
+                <span class="screen-reader-text">Updating One</span>
+            </a>
+            <a href="/Order/InsertingOne" class="tile">
+                <span class="icon-plus"></span>
+                <span class="screen-reader-text">Inserting One</span>
+            </a>
+            <a href="/Order/DeleteOne/@Model.Order.Id" class="tile">
+                <span class="icon-remove"></span>
+                <span class="screen-reader-text">Delete One</span>
+            </a>
+            <a href="/Order/Cancel" class="tile">
+                <span class="icon-close"></span>
+                <span class="screen-reader-text">Annuleren</span>
+            </a>
+        </div>
+        <fieldset>
+            <div>
+                <label for="Order-Id">Id</label>
+                <input id="Order-Id" name="Order-Id" type="text" value="@Model.Order.Id" readonly>
+            </div>
+            <div>
+                <label for="Order-OrderDate">Bestel Datum</label>
+                <input id="Order-OrderDate" name="Order-OrderDate" type="text" value="@Model.Order.OrderDate" readonly>
+            </div>
+            <div>
+                <label for="Order-ShippingDate">Verzend Datum</label>
+                <input id="Order-ShippingDate" name="Order-ShippingDate" type="text" value="@Model.Order.ShippingDate" readonly>
+            </div>
+            <div>
+                <label for="Order-Comment">Opmerking</label>
+                <input id="Order-Comment" name="Order-Comment" type="text" value="@Model.Order.Comment" readonly>
+            </div>
+            <div>
+                <label for="Order-CustomerId">Klantnummer</label>
+                <input id="Order-CustomerId" name="Order-CustomerId" type="text" value="@Model.Order.CustomerId" readonly>
+            </div>
+            <div>
+                <label for="Order-ShippingMethodId">Verzend methode</label>
+                <input id="Order-ShippingMethodId" name="Order-ShippingMethodId" type="text" value="@Model.Order.ShippingMethodId" readonly>
+            </div>
+            <div>
+                <label for="Order-StatusId">Status</label>
+                <input id="Order-StatusId" name="Order-StatusId" type="text" value="@Model.Order.StatusId" readonly>
+            </div>
+        </fieldset>
+        <div class="feedback"></div>
+    </div>
+    <aside class="list">
+        <table class="list">
+            <thead>
+                <tr>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Order Date
+                    </th>
+                    <th>
+                        Shipping Date
+                    </th>
+                    <th>
+                        Comment
+                    </th>
+                    <th>
+                        Customer ID
+                    </th>
+                    <th>
+                        Shipping Method ID
+                    </th>
+                    <th>
+                        Status ID
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.OrderList)
+                {
+                    <tr>
+                        <td>
+                            <a href="Order/ReadingOne/@item.Id">Select</a> |
+                        </td>
+                        <td>
+                            @item.Id
+                        </td>
+                        <td>
+                            @item.OrderDate
+                        </td>
+                        <td>
+                            @item.ShippingDate
+                        </td>
+                        <td>
+                            @item.Comment
+                        </td>
+                        <td>
+                            @item.CustomerId
+                        </td>
+                        <td>
+                            @item.ShippingMethodId
+                        </td>
+                        <td>
+                            @item.StatusId
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </aside>
+</div>
