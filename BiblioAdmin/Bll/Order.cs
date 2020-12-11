@@ -14,12 +14,12 @@ namespace BiblioAdmin.Bll
         [Column(TypeName = "varchar(512)")]
         public string Comment { get; set; }
         [Column(TypeName = "int(11)")]
+        [Key]
         public int Id { get; set; }
         [Column(TypeName = "int(11)")]
         public int CustomerId { get; set; }
         [Column(TypeName = "int(11)")]
         public int ShippingMethodId { get; set; }
-        [Key]
         [Column(TypeName = "int(11)")]
         public int StatusId { get; set; }
     }

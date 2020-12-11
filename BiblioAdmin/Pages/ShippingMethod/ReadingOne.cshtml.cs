@@ -22,5 +22,18 @@ namespace BiblioAdmin.Pages.ShippingMethod
             this.ShippingMethod = DbContext.ShippingMethod.SingleOrDefault(m => m.Id == id);
             ShippingMethodList = DbContext.ShippingMethod.ToList();
         }
+        public ActionResult OnGetDelete(int? id)
+        {
+            if (id != null)
+            {
+
+                Bll.ShippingMethod shippingMethod = new Bll.ShippingMethod();
+                shippingMethod.Id = (int)id;
+                DbContext.Remove(shippingMethod);
+                DbContext.SaveChanges();
+                return RedirectToPage("Index");
+            }
+            return Page();
+        }
     }
 }

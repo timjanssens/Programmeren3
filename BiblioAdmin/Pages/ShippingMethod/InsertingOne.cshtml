@@ -1,0 +1,32 @@
+﻿@page
+@model BiblioAdmin.Pages.ShippingMethod.InsertingOneModel
+@{
+}
+
+
+<h3>Inserting Shipping Method</h3>
+<hr />
+<br />
+<form method="post">
+    <fieldset>
+        <div>
+            <label asp-for="ShippingMethod.Name"></label>
+            <input asp-for="ShippingMethod.Name" />
+            <span class="alert-danger" asp-validation-for="ShippingMethod.Name"></span>
+        </div>
+        <div>
+            <label asp-for="ShippingMethod.Description"></label>
+            <input asp-for="ShippingMethod.Description" />
+            <span class="alert-danger" asp-validation-for="ShippingMethod.Description"></span>
+        </div>
+        <div>
+            <label asp-for="ShippingMethod.Price"></label>
+            <input asp-for="ShippingMethod.Price" />
+            <span class="alert-danger" asp-validation-for="ShippingMethod.Price"></span>
+        </div>
+
+    </fieldset>
+    <div>
+        <button type="submit" value="Insert" asp-page-handler="Insert">Insert</button>
+    </div>
+</form>

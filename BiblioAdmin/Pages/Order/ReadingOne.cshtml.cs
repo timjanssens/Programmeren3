@@ -22,5 +22,18 @@ namespace BiblioAdmin.Pages.Order
             this.Order = DbContext.Order.SingleOrDefault(m => m.Id == id);
             OrderList = DbContext.Order.ToList();
         }
+        public ActionResult OnGetDelete(int? id)
+        {
+            if (id != null)
+            {
+
+                Bll.Order order = new Bll.Order();
+                order.Id = (int)id;
+                DbContext.Remove(order);
+                DbContext.SaveChanges();
+                return RedirectToPage("Index");
+            }
+            return Page();
+        }
     }
 }

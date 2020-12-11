@@ -1,0 +1,50 @@
+﻿@page "{id}"
+@model BiblioAdmin.Pages.Order.UpdatingOneModel
+@{
+}
+
+<h3>Updating Order</h3>
+<hr />
+<br />
+<form method="post">
+    <fieldset>
+        <div>
+            <label asp-for="Order.Id"></label>
+            <input asp-for="Order.Id" />
+        </div>
+        <div>
+            <label asp-for="Order.OrderDate"></label>
+            <input asp-for="Order.OrderDate" />
+            <span class="alert-danger" asp-validation-for="Order.OrderDate"></span>
+        </div>
+        <div>
+            <label asp-for="Order.ShippingDate"></label>
+            <input asp-for="Order.ShippingDate" />
+            <span class="alert-danger" asp-validation-for="Order.ShippingDate"></span>
+        </div>
+        <div>
+            <label asp-for="Order.Comment"></label>
+            <input asp-for="Order.Comment" />
+            <span class="alert-danger" asp-validation-for="Order.Comment"></span>
+        </div>
+        <div>
+            <label asp-for="Order.CustomerId"></label>
+            <input asp-for="Order.CustomerId" />
+            <span class="alert-danger" asp-validation-for="Order.CustomerId"></span>
+        </div>
+        <div>
+            <label asp-for="Order.ShippingMethodId"></label>
+            <input asp-for="Order.ShippingMethodId" />
+            <span class="alert-danger" asp-validation-for="Order.ShippingMethodId"></span>
+        </div>
+        <div>
+            <label asp-for="Order.StatusId"></label>
+            <input asp-for="Order.StatusId" />
+            <span class="alert-danger" asp-validation-for="Order.StatusId"></span>
+        </div>
+
+    </fieldset>
+    <div>
+        <button type="submit" value="Update" asp-page-handler="Update">Update</button>
+    </div>
+</form>

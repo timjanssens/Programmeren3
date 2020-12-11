@@ -22,5 +22,19 @@ namespace BiblioAdmin.Pages.Customer
             this.Customer = DbContext.Customer.SingleOrDefault(m => m.Id == id);
             this.CustomerList = DbContext.Customer.ToList();
         }
+
+        public ActionResult OnGetDelete(int? id)
+        {
+            if (id != null)
+            {
+
+                Bll.Customer customer = new Bll.Customer();
+                customer.Id = (int)id;
+                DbContext.Remove(customer);
+                DbContext.SaveChanges();
+                return RedirectToPage("Index");
+            }
+            return Page();
+        }
     }
 }
