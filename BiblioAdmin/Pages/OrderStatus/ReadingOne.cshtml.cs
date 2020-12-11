@@ -22,5 +22,18 @@ namespace BiblioAdmin.Pages.OrderStatus
             this.OrderStatus = DbContext.OrderStatus.SingleOrDefault(m => m.Id == id);
             OrderStatusList = DbContext.OrderStatus.ToList();
         }
+
+        public ActionResult OnGetDelete(int? id)
+        {
+            if(id != null)
+            {
+                Bll.OrderStatus orderStatus = new Bll.OrderStatus();
+                orderStatus.Id = (int)id;
+                DbContext.Remove(orderStatus);
+                DbContext.SaveChanges();
+                return RedirectToPage("Index");
+            }
+            return Page();
+        }
     }
 }

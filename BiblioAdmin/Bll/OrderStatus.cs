@@ -12,6 +12,7 @@ namespace BiblioAdmin.Bll
         public string Name { get; set; }
         [Column(TypeName = "varchar(1024)")]
         public string Description { get; set; }
+        [Key]
         [Column(TypeName = "int(11)")]
         public int Id { get; set; }
     }

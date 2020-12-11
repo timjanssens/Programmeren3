@@ -19,6 +19,7 @@ namespace BiblioAdmin.Bll
         public int CustomerId { get; set; }
         [Column(TypeName = "int(11)")]
         public int ShippingMethodId { get; set; }
+        [Key]
         [Column(TypeName = "int(11)")]
         public int StatusId { get; set; }
     }

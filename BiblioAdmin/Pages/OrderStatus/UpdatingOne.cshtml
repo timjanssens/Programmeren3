@@ -1,0 +1,29 @@
+﻿@page "{id}"
+@model BiblioAdmin.Pages.OrderStatus.UpdatingOneModel
+@{
+}
+
+
+<h3>Updating OrderStatus</h3>
+<hr />
+<br />
+<form method="post">
+    <fieldset>
+        <div>
+            <label asp-for="OrderStatus.Id"></label>
+            <input asp-for="OrderStatus.Id" />
+        </div>
+        <div>
+            <label asp-for="OrderStatus.Name"></label>
+            <input asp-for="OrderStatus.Name" />
+            <span class="alert-danger" asp-validation-for="OrderStatus.Name"></span>
+        </div>
+        <div>
+            <label asp-for="OrderStatus.Description"></label>
+            <textarea asp-for="OrderStatus.Description"></textarea>
+        </div>
+    </fieldset>
+    <div>
+        <button type="submit" value="Update" asp-page-handler="Update">Update</button>
+    </div>
+</form>

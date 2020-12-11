@@ -13,6 +13,7 @@ namespace BiblioAdmin.Bll
         public int OrderId { get; set; }
         [Column(TypeName = "decimal(4,2)")]
         public decimal? Quantity { get; set; }
+        [Key]
         [Column(TypeName = "int(11)")]
         public int Id { get; set; }
     }

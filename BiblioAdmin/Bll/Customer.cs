@@ -29,6 +29,7 @@ namespace BiblioAdmin.Bll
         public string Country { get; set; }
         [Column(TypeName = "varchar(40)")]
         public string Phone { get; set; }
+        [Key]
         [Column(TypeName = "int(11)")]
         public int Id { get; set; }
     }

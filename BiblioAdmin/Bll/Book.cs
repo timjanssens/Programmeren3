@@ -39,6 +39,7 @@ namespace BiblioAdmin.Bll
         public string ProductTypeFull { get; set; }
         [Column(TypeName = "varchar(2000)")]
         public string Description { get; set; }
+        [Key]
         [Column(TypeName = "int(11)")]
         public int Id { get; set; }
     }

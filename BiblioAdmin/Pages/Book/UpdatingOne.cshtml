@@ -1,0 +1,78 @@
+﻿@page "{id}"
+@model BiblioAdmin.Pages.Book.UpdatingOneModel
+@{
+}
+
+<h3>Updating Book</h3>
+<hr />
+<br />
+<form method="post">
+    <fieldset>
+        <div>
+            <label asp-for="Book.Id"></label>
+            <input asp-for="Book.Id" />
+        </div>
+        <div>
+            <label asp-for="Book.Author"></label>
+            <input asp-for="Book.Author" />
+            <div>
+                <label asp-for="Book.Title"></label>
+                <input asp-for="Book.Title" />
+            </div>
+            <div>
+                <label asp-for="Book.ImageUrl"></label>
+                <input asp-for="Book.ImageUrl" />
+            </div>
+            <div>
+                <label asp-for="Book.Subtitle"></label>
+                <input asp-for="Book.Subtitle" />
+            </div>
+            <div>
+                <label asp-for="Book.PublicationDate"></label>
+                <input asp-for="Book.PublicationDate" />
+            </div>
+            <div>
+                <label asp-for="Book.Publisher"></label>
+                <input asp-for="Book.Publisher" />
+            </div>
+            <div>
+                <label asp-for="Book.Category"></label>
+                <input asp-for="Book.Category" />
+            </div>
+            <div>
+                <label asp-for="Book.Category"></label>
+                <input asp-for="Book.Category" />
+            </div>
+            <div>
+                <label asp-for="Book.Size"></label>
+                <input asp-for="Book.Size" />
+            </div>
+            <div>
+                <label asp-for="Book.NumberOfPages"></label>
+                <input asp-for="Book.NumberOfPages" />
+            </div>
+            <div>
+                <label asp-for="Book.Language"></label>
+                <input asp-for="Book.Language" />
+            </div>
+            <div>
+                <label asp-for="Book.ProductCode"></label>
+                <input asp-for="Book.ProductCode" />
+            </div>
+            <div>
+                <label asp-for="Book.ProductType"></label>
+                <input asp-for="Book.ProductType" />
+            </div>
+            <div>
+                <label asp-for="Book.ProductTypeFull"></label>
+                <input asp-for="Book.ProductTypeFull" />
+            </div>
+            <div>
+                <label asp-for="Book.Description"></label>
+                <input asp-for="Book.Description" />
+            </div>
+</fieldset>
+    <div>
+        <button type="submit" value="Update" asp-page-handler="Update">Update</button>
+    </div>
+</form>

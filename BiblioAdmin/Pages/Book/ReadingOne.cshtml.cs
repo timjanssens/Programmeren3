@@ -22,5 +22,18 @@ namespace BiblioAdmin.Pages.Book
             this.Book = DbContext.Book.SingleOrDefault(m => m.Id == id);
             this.BookList = DbContext.Book.ToList();
         }
+        public ActionResult OnGetDelete(int? id)
+        {
+            if (id != null)
+            {
+
+                Bll.Book book = new Bll.Book();
+                book.Id = (int)id;
+                DbContext.Remove(book);
+                DbContext.SaveChanges();
+                return RedirectToPage("Index");
+            }
+            return Page();
+        }
     }
 }

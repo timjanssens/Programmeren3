@@ -23,10 +23,8 @@
                 <span class="icon-plus"></span>
                 <span class="screen-reader-text">Inserting One</span>
             </a>
-            <a href="/Book/DeleteOne/@Model.Book.Id" class="tile">
-                <span class="icon-remove"></span>
-                <span class="screen-reader-text">Delete One</span>
-            </a>
+            <a asp-page="./ReadingOne" onclick="return confirm('Weet je zeker dat je deze Orderstatus wilt deleten?');"
+               asp-page-handler="Delete" asp-route-id="@Model.Book.Id">Delete</a>
             <a href="/Book/Cancel" class="tile">
                 <span class="icon-close"></span>
                 <span class="screen-reader-text">Annuleren</span>

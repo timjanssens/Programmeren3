@@ -15,6 +15,7 @@ namespace BiblioAdmin.Bll
         public string Description { get; set; }
         [Column(TypeName = "decimal(6,2)")]
         public decimal? Price { get; set; }
+        [Key]
         [Column(TypeName = "int(11)")]
         public int Id { get; set; }
     }
