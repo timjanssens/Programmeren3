@@ -20,7 +20,7 @@ namespace BiblioAdmin.Pages.Book
         public void OnGet(int? id)
         {
             this.Book = DbContext.Book.SingleOrDefault(m => m.Id == id);
-            this.BookList = DbContext.Book.ToList();
+            BookList = DbContext.Book.ToList();
         }
         public ActionResult OnGetDelete(int? id)
         {

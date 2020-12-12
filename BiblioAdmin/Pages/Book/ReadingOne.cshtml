@@ -43,7 +43,7 @@
                 <label for="Book-Title">Titel</label>
                 <input id="Book-Title" name="Book-Title" type="text" value="@Model.Book.Title" readonly>
             </div>
-            <div>
+            @*<div>
                 <label for="Book-ImageUrl">URL Cover</label>
                 <textarea id="Book-ImageUrl" name="Book-ImageUrl" type="text" readonly>@Model.Book.ImageUrl</textarea>
             </div>
@@ -94,7 +94,7 @@
             <div>
                 <label for="Book-Description">Omschrijving</label>
                 <textarea id="Book-Description" name="Book-Description" type="text" readonly>@Model.Book.Description</textarea>
-            </div>
+            </div>*@
         </fieldset>
         <div class="feedback"></div>
     </div>
@@ -105,9 +105,9 @@
                     <th>
                         Id
                     </th>
-                    <th>
+                    @*<th>
                         Cover
-                    </th>
+                    </th>*@
                     <th>
                         Naam
                     </th>
@@ -121,14 +121,14 @@
                 {
                     <tr>
                         <td>
-                            <a href="@item.Id">-></a> |
+                            <a href="@item.Id">-></a> 
                         </td>
                         <td>
                             @item.Id
                         </td>
-                        <td>
+                        @*<td>
                             <img src="@item.ImageUrl" alt="Sample Image" width="50px" />
-                        </td>
+                        </td>*@
                         <td>
                             @item.Author
                         </td>
