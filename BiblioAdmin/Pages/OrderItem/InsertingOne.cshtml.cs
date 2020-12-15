@@ -10,6 +10,7 @@ namespace BiblioAdmin.Pages.OrderItem
     public class InsertingOneModel : PageModel
     {
         private readonly Bll.Student7Context dbContext;
+        public List<Bll.Book> BookList { get; set; }
         public InsertingOneModel(Bll.Student7Context dbContext)
         {
             this.dbContext = dbContext;
@@ -20,6 +21,7 @@ namespace BiblioAdmin.Pages.OrderItem
         public void OnGet()
         {
             OrderItemList = dbContext.OrderItem.ToList();
+            this.BookList = dbContext.Book.ToList();
         }
 
         public ActionResult OnPostInsert(Bll.OrderItem orderItem)

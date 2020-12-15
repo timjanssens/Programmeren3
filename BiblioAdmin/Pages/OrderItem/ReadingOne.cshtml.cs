@@ -20,6 +20,7 @@ namespace BiblioAdmin.Pages.OrderItem
         public void OnGet(int? id)
         {
             this.OrderItem = DbContext.OrderItem.SingleOrDefault(m => m.Id == id);
+            OrderItem.Book = DbContext.Book.SingleOrDefault(m => m.Id == this.OrderItem.BookId);
             OrderItemList = DbContext.OrderItem.ToList();
         }
         public ActionResult OnGetDelete(int? id)

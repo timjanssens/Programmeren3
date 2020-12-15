@@ -10,22 +10,22 @@
 <form method="post">
     <fieldset>
         <div>
-            <label asp-for="Order.OrderDate"></label>
+            <label asp-for="Order.OrderDate">Bestel datum</label>
             <input asp-for="Order.OrderDate" />
             <span class="alert-danger" asp-validation-for="Order.OrderDate"></span>
         </div>
         <div>
-            <label asp-for="Order.ShippingDate"></label>
+            <label asp-for="Order.ShippingDate">Verzend datum</label>
             <input asp-for="Order.ShippingDate" />
             <span class="alert-danger" asp-validation-for="Order.ShippingDate"></span>
         </div>
         <div>
-            <label asp-for="Order.Comment"></label>
+            <label asp-for="Order.Comment">Commentaar</label>
             <input asp-for="Order.Comment" />
             <span class="alert-danger" asp-validation-for="Order.Comment"></span>
         </div>
         <div>
-            <label asp-for="Order.CustomerId"></label>
+            <label asp-for="Order.CustomerId">Klant</label>
             <select id="Order_CustomerId" name="Order.CustomerId">
                 @foreach (var item in Model.CustomerList)
                 {
@@ -34,7 +34,7 @@
             </select>
         </div>
         <div>
-            <label asp-for="Order.ShippingMethodId"></label>
+            <label asp-for="Order.ShippingMethodId">Verzendingsmethode</label>
             <select id="Order_ShippingMethodId" name="Order.ShippingMethodId">
                 @foreach (var item in Model.ShippingMethodList)
                 {
@@ -43,7 +43,7 @@
             </select>
         </div>
         <div>
-            <label asp-for="Order.StatusId"></label>
+            <label asp-for="Order.StatusId">Status</label>
             <select id="Order_StatusId" name="Order.StatusId">
                 @foreach (var item in Model.OrderStatusList)
                 {

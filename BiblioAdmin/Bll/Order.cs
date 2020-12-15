@@ -27,6 +27,7 @@ namespace BiblioAdmin.Bll
         public int StatusId { get; set; }
 
         [MySqlCharset("latin1")]
+       
         [NotMapped]
         [ForeignKey("CustomerId")]
         public Customer Customer { get; set; }

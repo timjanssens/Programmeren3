@@ -10,8 +10,13 @@
 <form method="post">
     <fieldset>
         <div>
-            <label asp-for="OrderItem.Id"></label>
-            <input asp-for="OrderItem.Id" readonly=" @(true)"/>
+            <label asp-for="OrderItem.BookId">Titel</label>
+            <select id="OrderItem_BookId" name="OrderItem.BookId">
+                @foreach (var item in Model.BookList)
+                {
+                    <option value="@item.Id">@item.Title</option>
+                }
+            </select>
         </div>
         <div>
             <label asp-for="OrderItem.BookId"></label>
