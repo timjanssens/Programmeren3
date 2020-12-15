@@ -12,6 +12,9 @@ namespace BiblioAdmin.Pages.Order
         [BindProperty]
         public Bll.Order Order { get; set; }
         public List<Bll.Order> OrderList { get; set; }
+        public List<Bll.Customer> CustomerList { get; set; }
+        public List<Bll.OrderStatus> OrderStatusList { get; set; }
+        public List<Bll.ShippingMethod> ShippingMethodList { get; set; }
 
         private readonly Bll.Student7Context dbContext;
         // voeg constructor toe om geïnjecteerde DBContext 
@@ -24,6 +27,9 @@ namespace BiblioAdmin.Pages.Order
         {
             this.Order = dbContext.Order.SingleOrDefault(m => m.Id == id);
             OrderList = dbContext.Order.ToList();
+            CustomerList = dbContext.Customer.ToList();
+            OrderStatusList = dbContext.OrderStatus.ToList();
+            ShippingMethodList = dbContext.ShippingMethod.ToList();
         }
 
 

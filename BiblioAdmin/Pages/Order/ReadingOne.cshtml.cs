@@ -20,7 +20,11 @@ namespace BiblioAdmin.Pages.Order
         public void OnGet(int? id)
         {
             this.Order = DbContext.Order.SingleOrDefault(m => m.Id == id);
+            Order.ShippingMethod = DbContext.ShippingMethod.SingleOrDefault(m => m.Id == this.Order.ShippingMethodId);
+            Order.Status = DbContext.OrderStatus.SingleOrDefault(m => m.Id == this.Order.StatusId);
+            Order.Customer = DbContext.Customer.SingleOrDefault(m => m.Id == this.Order.CustomerId);
             OrderList = DbContext.Order.ToList();
+
         }
         public ActionResult OnGetDelete(int? id)
         {

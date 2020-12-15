@@ -29,18 +29,39 @@
         </div>
         <div>
             <label asp-for="Order.CustomerId"></label>
-            <input asp-for="Order.CustomerId" />
-            <span class="alert-danger" asp-validation-for="Order.CustomerId"></span>
+            <select id="Order-CustomerId" name="Order.CustomerId">
+                @foreach (var item in Model.CustomerList)
+                {
+                    <option value="@item.Id"
+                            selected="@(item.Id == Model.Order.CustomerId ? true : false)">
+                        @item.FirstName @item.LastName
+                    </option>
+                }
+            </select>
         </div>
         <div>
             <label asp-for="Order.ShippingMethodId"></label>
-            <input asp-for="Order.ShippingMethodId" />
-            <span class="alert-danger" asp-validation-for="Order.ShippingMethodId"></span>
+            <select id="Order-ShippingMethodId" name="Order.ShippingMethodId">
+                @foreach (var item in Model.ShippingMethodList)
+                {
+                    <option value="@item.Id"
+                            selected="@(item.Id == Model.Order.ShippingMethodId ? true : false)">
+                        @item.Name
+                    </option>
+                }
+            </select>
         </div>
         <div>
             <label asp-for="Order.StatusId"></label>
-            <input asp-for="Order.StatusId" />
-            <span class="alert-danger" asp-validation-for="Order.StatusId"></span>
+            <select id="Order-StatusId" name="Order.StatusId">
+                @foreach (var item in Model.OrderStatusList)
+                {
+                    <option value="@item.Id"
+                            selected="@(item.Id == Model.Order.StatusId ? true : false)">
+                        @item.Name
+                    </option>
+                }
+            </select>
         </div>
 
     </fieldset>
@@ -48,3 +69,5 @@
         <button type="submit" value="Update" asp-page-handler="Update">Update</button>
     </div>
 </form>
+
+<partial name="Order/_ReadingAll" model="Model.OrderList" />

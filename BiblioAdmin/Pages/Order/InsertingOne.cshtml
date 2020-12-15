@@ -26,18 +26,30 @@
         </div>
         <div>
             <label asp-for="Order.CustomerId"></label>
-            <input asp-for="Order.CustomerId" />
-            <span class="alert-danger" asp-validation-for="Order.CustomerId"></span>
+            <select id="Order_CustomerId" name="Order.CustomerId">
+                @foreach (var item in Model.CustomerList)
+                {
+                    <option value="@item.Id">@item.FirstName @item.LastName</option>
+                }
+            </select>
         </div>
         <div>
             <label asp-for="Order.ShippingMethodId"></label>
-            <input asp-for="Order.ShippingMethodId" />
-            <span class="alert-danger" asp-validation-for="Order.ShippingMethodId"></span>
+            <select id="Order_ShippingMethodId" name="Order.ShippingMethodId">
+                @foreach (var item in Model.ShippingMethodList)
+                {
+                    <option value="@item.Id">@item.Name</option>
+                }
+            </select>
         </div>
         <div>
             <label asp-for="Order.StatusId"></label>
-            <input asp-for="Order.StatusId" />
-            <span class="alert-danger" asp-validation-for="Order.StatusId"></span>
+            <select id="Order_StatusId" name="Order.StatusId">
+                @foreach (var item in Model.OrderStatusList)
+                {
+                    <option value="@item.Id">@item.Name</option>
+                }
+            </select>
         </div>
 
     </fieldset>
@@ -45,3 +57,5 @@
         <button type="submit" value="Insert" asp-page-handler="Insert">Insert</button>
     </div>
 </form>
+
+<partial name="Order/_ReadingAll" model="Model.OrderList" />

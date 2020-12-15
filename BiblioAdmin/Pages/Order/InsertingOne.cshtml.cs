@@ -10,6 +10,9 @@ namespace BiblioAdmin.Pages.Order
     public class InsertingOneModel : PageModel
     {
         private readonly Bll.Student7Context dbContext;
+        public List<Bll.Customer> CustomerList { get; set; }
+        public List<Bll.OrderStatus> OrderStatusList { get; set; }
+        public List<Bll.ShippingMethod> ShippingMethodList { get; set; }
         // voeg constructor toe om geïnjecteerde DBContext 
         // te kunnen binnenkrijgen in deze klasse
         public InsertingOneModel(Bll.Student7Context dbContext)
@@ -23,6 +26,9 @@ namespace BiblioAdmin.Pages.Order
         public void OnGet()
         {
             OrderList = dbContext.Order.ToList();
+            CustomerList = dbContext.Customer.ToList();
+            OrderStatusList = dbContext.OrderStatus.ToList();
+            ShippingMethodList = dbContext.ShippingMethod.ToList();
         }
 
         public ActionResult OnPostInsert(Bll.Order order)

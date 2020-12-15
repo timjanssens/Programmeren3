@@ -1,0 +1,48 @@
+﻿@model List<Bll.OrderItem>
+@{
+}
+
+
+
+<aside class="list">
+    <table class="list">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Book
+                </th>
+                <th>
+                    Order nummer
+                </th>
+                <th>
+                    Hoeveelheid
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a href="/OrderItem/ReadingOne/@item.Id">Select</a> |
+                    </td>
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.BookId
+                    </td>
+                    <td>
+                        @item.OrderId
+                    </td>
+                    <td>
+                        @item.Quantity
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</aside>

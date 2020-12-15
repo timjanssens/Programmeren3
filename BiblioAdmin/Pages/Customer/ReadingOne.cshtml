@@ -66,60 +66,7 @@
         </fieldset>
         <div class="feedback"></div>
     </div>
-    <aside class="list">
-        <table class="list">
-            <thead>
-                <tr>
-                    <th>
-                        Id
-                    </th>
-                    <th>
-                        Voornaam
-                    </th>
-                    <th>
-                        Naam
-                    </th>
-                    <th>
-                        Adres
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.CustomerList)
-                {
-                    <tr>
-                        <td>
-                            <a href="@item.Id">Select</a> |
-                        </td>
-                        <td>
-                            @item.Id
-                        </td>
-                        <td>
-                            @item.FirstName
-                        </td>
-                        <td>
-                            @item.LastName
-                        </td>
-                        <td>
-                            @item.Address
-                        </td>
-                        @*
-                            <td>
-                                @item.City
-                            </td>
-                            <td>
-                                @item.PostalCode
-                            </td>
-                            <td>
-                                @item.Country
-                            </td>
-                            <td>
-                                @item.Phone
-                            </td>
-                        *@
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </aside>
+
+
+    <partial name="Customer/_ReadingAll" model="Model.CustomerList" />
 </div>

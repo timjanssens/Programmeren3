@@ -1,0 +1,41 @@
+﻿@model List<Bll.OrderStatus>
+@{
+}
+
+
+<aside class="list">
+    <table class="list">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Naam
+                </th>
+                <th>
+                    Beschrijving
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a href="/OrderStatus/ReadingOne/@item.Id">Select</a> |
+                    </td>
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                    <td>
+                        @item.Description
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</aside>
