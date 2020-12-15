@@ -11,7 +11,7 @@
     <fieldset>
         <div>
             <label asp-for="Customer.Id"></label>
-            <input asp-for="Customer.Id" />
+            <input asp-for="Customer.Id" readonly=" @(true)" />
             <span class="alert-danger" asp-validation-for="Customer.Id"></span>
         </div>
         <div>

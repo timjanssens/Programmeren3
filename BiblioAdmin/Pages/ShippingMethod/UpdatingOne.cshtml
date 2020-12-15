@@ -10,7 +10,7 @@
     <fieldset>
         <div>
             <label asp-for="ShippingMethod.Id"></label>
-            <input asp-for="ShippingMethod.Id" />
+            <input asp-for="ShippingMethod.Id" readonly=" @(true)"/>
         </div>
         <div>
             <label asp-for="ShippingMethod.Name"></label>
