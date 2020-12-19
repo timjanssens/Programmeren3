@@ -11,12 +11,12 @@
     <fieldset>
         <div>
             <label asp-for="Book.Author"></label>
-            <input asp-for="Book.Author" />
+            <input asp-for="Book.Author" required = "required"  />
             <span class="alert-danger" asp-validation-for="Book.Author"></span>
         </div>
         <div>
             <label asp-for="Book.Title"></label>
-            <input asp-for="Book.Title" />
+            <input asp-for="Book.Title" required = "required"  />
             <span class="alert-danger" asp-validation-for="Book.Title"></span>
         </div>
         <div>
