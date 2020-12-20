@@ -100,7 +100,8 @@ body {
 
 
 .logoHome {
-    width: 300px;
+    width: 350px;
+    margin: 50px 0 0 80px;
 }
 
 
@@ -126,12 +127,7 @@ footer {
 }*/
 
 
-@media (min-width: 800px) {
 
-    .horizontal-nav {
-        flex-direction: row;
-    }
-}
 
 
 
@@ -141,6 +137,7 @@ footer {
     .horizontal-nav {
         flex-direction: row;
     }
+
     .logoHome {
         width: 800px;
         margin: 100px 0 0 250px;
