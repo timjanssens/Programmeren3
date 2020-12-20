@@ -3,36 +3,34 @@
 @{
 }
 
+<section>
+    <h3>Inserting OrderItem</h3>
+    <form method="post">
+        <fieldset>
+            <div>
+                <label asp-for="OrderItem.BookId">Titel</label>
+                <select id="OrderItem_BookId" name="OrderItem.BookId">
+                    @foreach (var item in Model.BookList)
+                    {
+                        <option value="@item.Id">@item.Title</option>
+                    }
+                </select>
+            </div>
+            <div>
+                <label asp-for="OrderItem.OrderId"></label>
+                <input asp-for="OrderItem.OrderId" />
+                <span class="alert-danger" asp-validation-for="OrderItem.OrderId"></span>
+            </div>
+            <div>
+                <label asp-for="OrderItem.Quantity"></label>
+                <input asp-for="OrderItem.Quantity" />
+                <span class="alert-danger" asp-validation-for="OrderItem.Quantity"></span>
+            </div>
 
-<h3>Inserting OrderItem</h3>
-<hr />
-<br />
-<form method="post">
-    <fieldset>
+        </fieldset>
         <div>
-            <label asp-for="OrderItem.BookId">Titel</label>
-            <select id="OrderItem_BookId" name="OrderItem.BookId">
-                @foreach (var item in Model.BookList)
-                {
-                    <option value="@item.Id">@item.Title</option>
-                }
-            </select>
+            <button type="submit" value="Insert" asp-page-handler="Insert">Insert</button>
         </div>
-        <div>
-            <label asp-for="OrderItem.OrderId"></label>
-            <input asp-for="OrderItem.OrderId" />
-            <span class="alert-danger" asp-validation-for="OrderItem.OrderId"></span>
-        </div>
-        <div>
-            <label asp-for="OrderItem.Quantity"></label>
-            <input asp-for="OrderItem.Quantity" />
-            <span class="alert-danger" asp-validation-for="OrderItem.Quantity"></span>
-        </div>
-
-    </fieldset>
-    <div>
-        <button type="submit" value="Insert" asp-page-handler="Insert">Insert</button>
-    </div>
-</form>
-
+    </form>
+</section>
 <partial name="OrderItem/_ReadingAll" model="Model.OrderItemList" />

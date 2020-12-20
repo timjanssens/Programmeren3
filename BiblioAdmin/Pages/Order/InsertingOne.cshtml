@@ -3,60 +3,59 @@
 @{
 }
 
+<section>
+    <h3>Inserting Order</h3>
 
-<h3>Inserting Order</h3>
-<hr />
-<br />
-<form method="post">
-    <fieldset>
-      
-        <div>
-            <label asp-for="Order.OrderDate">Bestel datum</label>
-            <input asp-for="Order.OrderDate" />
-            <span class="alert-danger" asp-validation-for="Order.OrderDate"></span>
-        </div>
-        <div>
-            <label asp-for="Order.ShippingDate">Verzend datum</label>
-            <input asp-for="Order.ShippingDate" />
-            <span class="alert-danger" asp-validation-for="Order.ShippingDate"></span>
-        </div>
-        <div>
-            <label asp-for="Order.Comment">Commentaar</label>
-            <input asp-for="Order.Comment" />
-            <span class="alert-danger" asp-validation-for="Order.Comment"></span>
-        </div>
-        <div>
-            <label asp-for="Order.CustomerId">Klant</label>
-            <select id="Order_CustomerId" name="Order.CustomerId">
-                @foreach (var item in Model.CustomerList)
-                {
-                    <option value="@item.Id">@item.FirstName @item.LastName</option>
-                }
-            </select>
-        </div>
-        <div>
-            <label asp-for="Order.ShippingMethodId">Verzendingsmethode</label>
-            <select id="Order_ShippingMethodId" name="Order.ShippingMethodId">
-                @foreach (var item in Model.ShippingMethodList)
-                {
-                    <option value="@item.Id">@item.Name</option>
-                }
-            </select>
-        </div>
-        <div>
-            <label asp-for="Order.StatusId">Status</label>
-            <select id="Order_StatusId" name="Order.StatusId">
-                @foreach (var item in Model.OrderStatusList)
-                {
-                    <option value="@item.Id">@item.Name</option>
-                }
-            </select>
-        </div>
+    <form method="post">
+        <fieldset>
 
-    </fieldset>
-    <div>
-        <button type="submit" value="Insert" asp-page-handler="Insert">Insert</button>
-    </div>
-</form>
+            <div>
+                <label asp-for="Order.OrderDate">Bestel datum</label>
+                <input asp-for="Order.OrderDate" />
+                <span class="alert-danger" asp-validation-for="Order.OrderDate"></span>
+            </div>
+            <div>
+                <label asp-for="Order.ShippingDate">Verzend datum</label>
+                <input asp-for="Order.ShippingDate" />
+                <span class="alert-danger" asp-validation-for="Order.ShippingDate"></span>
+            </div>
+            <div>
+                <label asp-for="Order.Comment">Commentaar</label>
+                <input asp-for="Order.Comment" />
+                <span class="alert-danger" asp-validation-for="Order.Comment"></span>
+            </div>
+            <div>
+                <label asp-for="Order.CustomerId">Klant</label>
+                <select id="Order_CustomerId" name="Order.CustomerId">
+                    @foreach (var item in Model.CustomerList)
+                    {
+                        <option value="@item.Id">@item.FirstName @item.LastName</option>
+                    }
+                </select>
+            </div>
+            <div>
+                <label asp-for="Order.ShippingMethodId">Verzendingsmethode</label>
+                <select id="Order_ShippingMethodId" name="Order.ShippingMethodId">
+                    @foreach (var item in Model.ShippingMethodList)
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                </select>
+            </div>
+            <div>
+                <label asp-for="Order.StatusId">Status</label>
+                <select id="Order_StatusId" name="Order.StatusId">
+                    @foreach (var item in Model.OrderStatusList)
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                </select>
+            </div>
 
+        </fieldset>
+        <div>
+            <button type="submit" value="Insert" asp-page-handler="Insert">Insert</button>
+        </div>
+    </form>
+</section>
 <partial name="Order/_ReadingAll" model="Model.OrderList" />

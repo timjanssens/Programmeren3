@@ -3,70 +3,61 @@
 @{
 }
 
+<section>
+    <h1>Customer ReadingOne</h1>
 
-<h1>Customer ReadingOne</h1>
-<nav class="control-panel">
-    <a href="/Index">
-        <span>Hier komt het logo</span>
-    </a>
-    <h1 class="banner">Biblio Admin</h1>
-</nav>
-<div class="show-room entity">
-    <div class="detail">
-        <div class="command-panel">
-            <h2>Customer</h2>
-            <a href="/Customer/UpdatingOne/@Model.Customer.Id" class="tile">
-                <span class="icon-pencil"></span>
-                <span class="screen-reader-text">Updating One</span>
-            </a>
-            <a href="/Customer/InsertingOne" class="tile">
-                <span class="icon-plus"></span>
-                <span class="screen-reader-text">Inserting One</span>
-            </a>
-            <a asp-page="./ReadingOne" onclick="return confirm('Weet je zeker dat je deze Customer wilt deleten?');"
-               asp-page-handler="Delete" asp-route-id="@Model.Customer.Id">Delete</a>
-            <a href="/Book/Cancel" class="tile">
-                <span class="icon-close"></span>
-                <span class="screen-reader-text">Annuleren</span>
-            </a>
-        </div>
-        <fieldset>
-            <div>
-                <label for="Customer-Id">Id</label>
-                <input id="Customer-Id" name="Customer-Id" type="text" value="@Model.Customer.Id" readonly>
-            </div>
-            <div>
-                <label for="Customer-FirstName">Voornaam</label>
-                <input id="Customer-FirstName" name="Customer-FirstName" type="text" value="@Model.Customer.FirstName" readonly>
-            </div>
-            <div>
-                <label for="Customer-LastName">Naam</label>
-                <input id="Customer-LastName" name="Customer-LastName" type="text" value="@Model.Customer.LastName" readonly>
-            </div>
-            <div>
-                <label for="Customer-Address">Adres</label>
-                <input id="Customer-Address" name="Customer-Address" type="text" value="@Model.Customer.Address" readonly>
-            </div>
-            <div>
-                <label for="Customer-City">Stad</label>
-                <input id="Customer-City" name="Customer-City" type="text" value="@Model.Customer.City" readonly>
-            </div>
-            <div>
-                <label for="Customer-PostalCode">Postcode</label>
-                <input id="Customer-PostalCode" name="Customer-PostalCode" type="text" value="@Model.Customer.PostalCode" readonly>
-            </div>
-            <div>
-                <label for="Customer-Country">Land</label>
-                <input id="Customer-Country" name="Customer-Country" type="text" value="@Model.Customer.Country" readonly>
-            </div>
-            <div>
-                <label for="Customer-Phone">Telefoonnummer</label>
-                <input id="Customer-Phone" name="Customer-Phone" type="text" value="@Model.Customer.Phone" readonly>
-            </div>
-        </fieldset>
-        <div class="feedback"></div>
+
+    <div class="command-panel">
+        <h2>Customer</h2>
+        <a href="/Customer/UpdatingOne/@Model.Customer.Id" class="tile">
+            <span class="icon-pencil"></span>
+            <span class="screen-reader-text">Updating One</span>
+        </a>
+        <a href="/Customer/InsertingOne" class="tile">
+            <span class="icon-plus"></span>
+            <span class="screen-reader-text">Inserting One</span>
+        </a>
+        <a asp-page="./ReadingOne" onclick="return confirm('Weet je zeker dat je deze Customer wilt deleten?');"
+           asp-page-handler="Delete" asp-route-id="@Model.Customer.Id">Delete</a>
+        <a href="/Book/Cancel" class="tile">
+            <span class="icon-close"></span>
+            <span class="screen-reader-text">Annuleren</span>
+        </a>
     </div>
+    <fieldset>
+        <div>
+            <label for="Customer-Id">Id</label>
+            <input id="Customer-Id" name="Customer-Id" type="text" value="@Model.Customer.Id" readonly>
+        </div>
+        <div>
+            <label for="Customer-FirstName">Voornaam</label>
+            <input id="Customer-FirstName" name="Customer-FirstName" type="text" value="@Model.Customer.FirstName" readonly>
+        </div>
+        <div>
+            <label for="Customer-LastName">Naam</label>
+            <input id="Customer-LastName" name="Customer-LastName" type="text" value="@Model.Customer.LastName" readonly>
+        </div>
+        <div>
+            <label for="Customer-Address">Adres</label>
+            <input id="Customer-Address" name="Customer-Address" type="text" value="@Model.Customer.Address" readonly>
+        </div>
+        <div>
+            <label for="Customer-City">Stad</label>
+            <input id="Customer-City" name="Customer-City" type="text" value="@Model.Customer.City" readonly>
+        </div>
+        <div>
+            <label for="Customer-PostalCode">Postcode</label>
+            <input id="Customer-PostalCode" name="Customer-PostalCode" type="text" value="@Model.Customer.PostalCode" readonly>
+        </div>
+        <div>
+            <label for="Customer-Country">Land</label>
+            <input id="Customer-Country" name="Customer-Country" type="text" value="@Model.Customer.Country" readonly>
+        </div>
+        <div>
+            <label for="Customer-Phone">Telefoonnummer</label>
+            <input id="Customer-Phone" name="Customer-Phone" type="text" value="@Model.Customer.Phone" readonly>
+        </div>
+    </fieldset>
 
-
+</section>
     <partial name="Customer/_ReadingAll" model="Model.CustomerList" />
-</div>

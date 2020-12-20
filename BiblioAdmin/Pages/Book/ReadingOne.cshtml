@@ -3,47 +3,40 @@
 @{
 }
 
+<section>
+    <h1>Book ReadingOne</h1>
 
-<h1>Book ReadingOne</h1>
-<nav class="control-panel">
-    <a href="/Index">
-        <span>Hier komt het logo</span>
-    </a>
-    <h1 class="banner">Biblio Admin</h1>
-</nav>
-<div class="show-room entity">
-    <div class="detail">
-        <div class="command-panel">
-            <h2>Book</h2>
-            <a href="/Book/UpdatingOne/@Model.Book.Id" class="tile">
-                <span class="icon-pencil"></span>
-                <span class="screen-reader-text">Updating One</span>
-            </a>
-            <a href="/Book/InsertingOne" class="tile">
-                <span class="icon-plus"></span>
-                <span class="screen-reader-text">Inserting One</span>
-            </a>
-            <a asp-page="./ReadingOne" onclick="return confirm('Weet je zeker dat je dit Book wilt deleten?');"
-               asp-page-handler="Delete" asp-route-id="@Model.Book.Id">Delete</a>
-            <a href="/Book/Cancel" class="tile">
-                <span class="icon-close"></span>
-                <span class="screen-reader-text">Annuleren</span>
-            </a>
+    <div class="command-panel">
+        <h2>Book</h2>
+        <a href="/Book/UpdatingOne/@Model.Book.Id" class="tile">
+            <span class="icon-pencil"></span>
+            <span class="screen-reader-text">Updating One</span>
+        </a>
+        <a href="/Book/InsertingOne" class="tile">
+            <span class="icon-plus"></span>
+            <span class="screen-reader-text">Inserting One</span>
+        </a>
+        <a asp-page="./ReadingOne" onclick="return confirm('Weet je zeker dat je dit Book wilt deleten?');"
+           asp-page-handler="Delete" asp-route-id="@Model.Book.Id">Delete</a>
+        <a href="/Book/Cancel" class="tile">
+            <span class="icon-close"></span>
+            <span class="screen-reader-text">Annuleren</span>
+        </a>
+    </div>
+    <fieldset>
+        <div>
+            <label for="Book-Id">Id</label>
+            <input id="Book-Id" name="Book-Id" type="text" value="@Model.Book.Id" readonly>
         </div>
-        <fieldset>
-            <div>
-                <label for="Book-Id">Id</label>
-                <input id="Book-Id" name="Book-Id" type="text" value="@Model.Book.Id" readonly>
-            </div>
-            <div>
-                <label for="Book-Author">Auteur</label>
-                <input id="Book-Author" name="Book-Author" type="text" value="@Model.Book.Author" readonly>
-            </div>
-            <div>
-                <label for="Book-Title">Titel</label>
-                <input id="Book-Title" name="Book-Title" type="text" value="@Model.Book.Title" readonly>
-            </div>
-            @*<div>
+        <div>
+            <label for="Book-Author">Auteur</label>
+            <input id="Book-Author" name="Book-Author" type="text" value="@Model.Book.Author" readonly>
+        </div>
+        <div>
+            <label for="Book-Title">Titel</label>
+            <input id="Book-Title" name="Book-Title" type="text" value="@Model.Book.Title" readonly>
+        </div>
+        @*<div>
                 <label for="Book-ImageUrl">URL Cover</label>
                 <textarea id="Book-ImageUrl" name="Book-ImageUrl" type="text" readonly>@Model.Book.ImageUrl</textarea>
             </div>
@@ -95,8 +88,7 @@
                 <label for="Book-Description">Omschrijving</label>
                 <textarea id="Book-Description" name="Book-Description" type="text" readonly>@Model.Book.Description</textarea>
             </div>*@
-        </fieldset>
-        <div class="feedback"></div>
-    </div>
+    </fieldset>
+</section>
     <partial name="Book/_ReadingAll" model="Model.BookList" />
 </div>
