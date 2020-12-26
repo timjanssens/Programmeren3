@@ -4,8 +4,16 @@
 }
 
 <section>
-    <h3>Inserting OrderItem</h3>
-    <form method="post">
+    <div class="navSection">
+        <h1>Insert book</h1>
+        <div class="linksNavigatie">
+            <button form="inputOrderItem" type="submit" value="Insert" asp-page-handler="Insert">Insert</button>
+            <a class="linkAsButton" href="/OrderItem/Index">
+                Cancel
+            </a>
+        </div>
+    </div>
+    <form method="post" id="inputOrderItem">
         <fieldset>
             <div>
                 <label asp-for="OrderItem.BookId">Titel</label>
@@ -28,9 +36,9 @@
             </div>
 
         </fieldset>
-        <div>
+        @*<div>
             <button type="submit" value="Insert" asp-page-handler="Insert">Insert</button>
-        </div>
+        </div>*@
     </form>
 </section>
 <partial name="OrderItem/_ReadingAll" model="Model.OrderItemList" />

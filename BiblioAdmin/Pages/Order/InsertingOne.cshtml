@@ -4,9 +4,17 @@
 }
 
 <section>
-    <h3>Inserting Order</h3>
+    <div class="navSection">
+        <h1>Insert order</h1>
+        <div class="linksNavigatie">
+            <button form="inputOrder" type="submit" value="Insert" asp-page-handler="Insert">Insert</button>
+            <a class="linkAsButton" href="/Order/Index">
+                Cancel
+            </a>
+        </div>
+    </div>
 
-    <form method="post">
+    <form method="post" id="inputOrder">
         <fieldset>
 
             <div>

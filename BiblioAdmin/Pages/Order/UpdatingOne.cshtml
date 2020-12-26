@@ -5,8 +5,16 @@
 
 
 <section>
-    <h3>Updating Order</h3>
-    <form method="post">
+    <div class="navSection">
+        <h1>Update Order</h1>
+        <div class="linksNavigatie">
+            <button form="updateOrder" type="submit" value="Update" asp-page-handler="Update">Update</button>
+            <a class="linkAsButton" href="/Order/Index">
+                Cancel
+            </a>
+        </div>
+    </div>
+    <form method="post" id="updateOrder">
         <fieldset>
             <div>
                 <label asp-for="Order.Id"></label>
@@ -65,9 +73,9 @@
             </div>
 
         </fieldset>
-        <div>
+        @*<div>
             <button type="submit" value="Update" asp-page-handler="Update">Update</button>
-        </div>
+        </div>*@
     </form>
 </section>
 <partial name="Order/_ReadingAll" model="Model.OrderList" />

@@ -4,9 +4,17 @@
 }
 
 <section>
-    <h3>Inserting OrderStatus</h3>
+    <div class="navSection">
+        <h1>Insert order status</h1>
+        <div class="linksNavigatie">
+            <button form="inputOrderStatus" type="submit" value="Insert" asp-page-handler="Insert">Insert</button>
+            <a class="linkAsButton" href="/OrderStatus/Index">
+                Cancel
+            </a>
+        </div>
+    </div>
 
-    <form method="post">
+    <form method="post" id="inputOrderStatus">
         <fieldset>
             <div>
                 <label asp-for="OrderStatus.Name"></label>
@@ -18,9 +26,9 @@
                 <textarea asp-for="OrderStatus.Description"></textarea>
             </div>
         </fieldset>
-        <div>
+        @*<div>
             <button type="submit" value="Insert" asp-page-handler="Insert">Insert</button>
-        </div>
+        </div>*@
     </form>
 </section>
 <partial name="OrderStatus/_ReadingAll" model="Model.OrderStatusList" />

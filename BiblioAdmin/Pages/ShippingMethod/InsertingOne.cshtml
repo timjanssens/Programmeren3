@@ -4,10 +4,16 @@
 }
 
 <section>
-    <h3>Inserting Shipping Method</h3>
-    <hr />
-    <br />
-    <form method="post">
+    <div class="navSection">
+        <h1>Insert shipping method</h1>
+        <div class="linksNavigatie">
+            <button form="inputShippingMethod" type="submit" value="Insert" asp-page-handler="Insert">Insert</button>
+            <a class="linkAsButton" href="/ShippingMethod/Index">
+                Cancel
+            </a>
+        </div>
+    </div>
+    <form method="post" id="inputShippingMethod">
         <fieldset>
             <div>
                 <label asp-for="ShippingMethod.Name"></label>
@@ -26,9 +32,9 @@
             </div>
 
         </fieldset>
-        <div>
+        @*<div>
             <button type="submit" value="Insert" asp-page-handler="Insert">Insert</button>
-        </div>
+        </div>*@
     </form>
 </section>
 <partial name="ShippingMethod/_ReadingAll" model="Model.ShippingMethodList" />

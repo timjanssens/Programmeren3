@@ -3,13 +3,15 @@
 @{
 }
 
-<section>
-    <h1>Order Status</h1>
 
-    <a href="/OrderStatus/InsertingOne" class="tile">
-        <span class="icon-plus"></span>
-        <span class="screen-reader-text">Inserting One</span>
-    </a>
+<section>
+    <div class="navSection">
+        <h1>Order status Overview</h1>
+
+        <a href="/OrderStatus/InsertingOne" class="linkAsButton">
+            Insert Orderstatus
+        </a>
+    </div>
 </section>
 
 <partial name="OrderStatus/_ReadingAll" model="Model.OrderStatusList" />

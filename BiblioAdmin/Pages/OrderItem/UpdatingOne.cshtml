@@ -4,8 +4,16 @@
 }
 
 <section>
-    <h3>Updating OrderStatus</h3>
-    <form method="post">
+    <div class="navSection">
+        <h1>Update book</h1>
+        <div class="linksNavigatie">
+            <button form="updateOrderItem" type="submit" value="Update" asp-page-handler="Update">Update</button>
+            <a class="linkAsButton" href="/OrderItem/Index">
+                Cancel
+            </a>
+        </div>
+    </div>
+    <form method="post" id="updateOrderItem">
         <fieldset>
             <div>
                 <label asp-for="OrderItem.BookId">Titel</label>
@@ -32,9 +40,9 @@
                 <span class="alert-danger" asp-validation-for="OrderItem.Quantity"></span>
             </div>
         </fieldset>
-        <div>
+        @*<div>
             <button type="submit" value="Update" asp-page-handler="Update">Update</button>
-        </div>
+        </div>*@
     </form>
 </section>
 <partial name="OrderItem/_ReadingAll" model="Model.OrderItemList" />

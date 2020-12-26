@@ -5,24 +5,21 @@
 
 
 <section>
-    <h1>Order Item ReadingOne</h1>
-
-    <div class="command-panel">
-        <h2>Order Item</h2>
-        <a href="/OrderItem/UpdatingOne/@Model.OrderItem.Id" class="tile">
-            <span class="icon-pencil"></span>
-            <span class="screen-reader-text">Updating One</span>
-        </a>
-        <a href="/OrderStatus/InsertingOne" class="tile">
-            <span class="icon-plus"></span>
-            <span class="screen-reader-text">Inserting One</span>
-        </a>
-        <a asp-page="./ReadingOne" onclick="return confirm('Weet je zeker dat je dit orderitem wilt deleten?');"
-           asp-page-handler="Delete" asp-route-id="@Model.OrderItem.Id">Delete</a>
-        <a href="/OrderItem/Cancel" class="tile">
-            <span class="icon-close"></span>
-            <span class="screen-reader-text">Annuleren</span>
-        </a>
+    <div class="navSection">
+        <h1>Order Item details</h1>
+        <div class="linksNavigatie">
+            <a class="linkAsButton" href="/OrderItem/UpdatingOne/@Model.OrderItem.Id">
+                Update
+            </a>
+            <a class="linkAsButton" href="/OrderItem/InsertingOne" class="tile">
+                Insert
+            </a>
+            <a asp-page="./ReadingOne" onclick="return confirm('Weet je zeker dat je dit OrderItem wilt deleten?');"
+               asp-page-handler="Delete" asp-route-id="@Model.OrderItem.Id" class="linkAsButton">Delete</a>
+            <a class="linkAsButton" href="/OrderItem/Index">
+                Cancel
+            </a>
+        </div>
     </div>
     <fieldset>
         <div>

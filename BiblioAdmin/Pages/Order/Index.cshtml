@@ -2,12 +2,13 @@
 @model BiblioAdmin.Pages.Order.IndexModel
 @{
 }
-<section>
-    <h1>Order</h1>
 
-    <a href="/Order/InsertingOne" class="tile">
-        <span class="icon-plus"></span>
-        <span class="screen-reader-text">Inserting One</span>
-    </a>
+<section>
+    <div class="navSection">
+        <h1>Order Overview</h1>
+        <a href="Order/InsertingOne" class="linkAsButton">
+            Insert order
+        </a>
+    </div>
 </section>
 <partial name="Order/_ReadingAll" model="Model.OrderList" />

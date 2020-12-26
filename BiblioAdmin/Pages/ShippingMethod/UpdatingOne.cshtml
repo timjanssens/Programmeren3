@@ -5,10 +5,16 @@
 
 
 <section>
-    <h3>Updating Shipping Method</h3>
-    <hr />
-    <br />
-    <form method="post">
+    <div class="navSection">
+        <h1>Update shipping method</h1>
+        <div class="linksNavigatie">
+            <button form="updateShippingMethod" type="submit" value="Update" asp-page-handler="Update">Update</button>
+            <a class="linkAsButton" href="/ShippingMethod/Index">
+                Cancel
+            </a>
+        </div>
+    </div>
+    <form method="post" id="updateShippingMethod">
         <fieldset>
             <div>
                 <label asp-for="ShippingMethod.Id"></label>
