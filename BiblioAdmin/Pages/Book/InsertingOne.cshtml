@@ -4,10 +4,16 @@
 }
 
 <section>
-    <h3>Inserting Book</h3>
-    <hr />
-    <br />
-    <form method="post">
+    <div class="navSection">
+        <h1>Insert book</h1>
+        <div class="linksNavigatie">
+            <button form="inputBook" type="submit" value="Insert" asp-page-handler="Insert">Insert</button>
+            <a class="linkAsButton" href="/Book/Index">
+                Cancel
+            </a>
+        </div>
+    </div>
+    <form method="post" id="inputBook">
         <fieldset>
             <div>
                 <label asp-for="Book.Author"></label>
@@ -85,9 +91,9 @@
                 <span class="alert-danger" asp-validation-for="Book.Description"></span>
             </div>
         </fieldset>
-        <div>
+        @*<div>
             <button type="submit" value="Insert" asp-page-handler="Insert">Insert</button>
-        </div>
+        </div>*@
     </form>
 </section>
 <partial name="Book/_ReadingAll" model="Model.BookList" />

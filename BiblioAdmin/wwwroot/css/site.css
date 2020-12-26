@@ -150,16 +150,38 @@ th {
 .linkAsButton, button {
     background-color: #E20513;
     border: none;
-    border-radius: 25px;
+    border-radius: 10px;
     color: white;
-    padding: 10px 10px 12px 10px;
+    padding: 5px 5px 6px 5px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 20px;
-    margin: 4px 2px;
+    font-size: 16px;
+    margin: 1px;
     cursor: pointer;
+    max-width: 200px;
 }
+
+    .linkAsButton:hover, button:hover {
+        background-color: #ed4048;
+    }
+
+    /*styling of the navigationbar in the section*/ 
+
+    h1{
+        color: #E20513;
+    }
+.navSection, .linksNavigatie {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.navSection {
+    margin-left: 25px;
+}
+
+
+
 
 /*Footer*/
 
@@ -192,8 +214,11 @@ footer {
 
 @media (min-width: 800px) {
 
-    .horizontal-nav {
+    .horizontal-nav, .navSection, .linksNavigatie {
         flex-direction: row;
+    }
+    .navSection {
+        margin-left: 0px;
     }
 
     .logoHome {

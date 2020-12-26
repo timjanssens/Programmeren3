@@ -4,19 +4,22 @@
 }
 
 <section>
-    <h1>Book details</h1>
-    <a class="linkAsButton" href="/Book/UpdatingOne/@Model.Book.Id">
-        Updating One
-    </a>
-    <a class="linkAsButton" href="/Book/InsertingOne" class="tile">
-        Inserting One
-    </a>
-    <a asp-page="./ReadingOne" onclick="return confirm('Weet je zeker dat je dit Book wilt deleten?');"
-       asp-page-handler="Delete" asp-route-id="@Model.Book.Id" class="linkAsButton">Delete</a>
-    <a class="linkAsButton" href="/Book/Cancel">
-        Annuleren
-    </a>
-
+    <div class="navSection">
+        <h1>Book details</h1>
+        <div class="linksNavigatie">
+            <a class="linkAsButton" href="/Book/UpdatingOne/@Model.Book.Id">
+                Update
+            </a>
+            <a class="linkAsButton" href="/Book/InsertingOne" class="tile">
+                Insert
+            </a>
+            <a asp-page="./ReadingOne" onclick="return confirm('Weet je zeker dat je dit Book wilt deleten?');"
+               asp-page-handler="Delete" asp-route-id="@Model.Book.Id" class="linkAsButton">Delete</a>
+            <a class="linkAsButton" href="/Book/Index">
+               Cancel
+            </a>
+        </div>
+    </div>
     <fieldset>
         <div>
             <label for="Book-Id">Id</label>
