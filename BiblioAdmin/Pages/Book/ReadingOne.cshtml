@@ -4,25 +4,19 @@
 }
 
 <section>
-    <h1>Book ReadingOne</h1>
+    <h1>Book details</h1>
+    <a class="linkAsButton" href="/Book/UpdatingOne/@Model.Book.Id">
+        Updating One
+    </a>
+    <a class="linkAsButton" href="/Book/InsertingOne" class="tile">
+        Inserting One
+    </a>
+    <a asp-page="./ReadingOne" onclick="return confirm('Weet je zeker dat je dit Book wilt deleten?');"
+       asp-page-handler="Delete" asp-route-id="@Model.Book.Id" class="linkAsButton">Delete</a>
+    <a class="linkAsButton" href="/Book/Cancel">
+        Annuleren
+    </a>
 
-    <div class="command-panel">
-        <h2>Book</h2>
-        <a href="/Book/UpdatingOne/@Model.Book.Id" class="tile">
-            <span class="icon-pencil"></span>
-            <span class="screen-reader-text">Updating One</span>
-        </a>
-        <a href="/Book/InsertingOne" class="tile">
-            <span class="icon-plus"></span>
-            <span class="screen-reader-text">Inserting One</span>
-        </a>
-        <a asp-page="./ReadingOne" onclick="return confirm('Weet je zeker dat je dit Book wilt deleten?');"
-           asp-page-handler="Delete" asp-route-id="@Model.Book.Id">Delete</a>
-        <a href="/Book/Cancel" class="tile">
-            <span class="icon-close"></span>
-            <span class="screen-reader-text">Annuleren</span>
-        </a>
-    </div>
     <fieldset>
         <div>
             <label for="Book-Id">Id</label>
@@ -36,59 +30,59 @@
             <label for="Book-Title">Titel</label>
             <input id="Book-Title" name="Book-Title" type="text" value="@Model.Book.Title" readonly>
         </div>
-        @*<div>
-                <label for="Book-ImageUrl">URL Cover</label>
-                <textarea id="Book-ImageUrl" name="Book-ImageUrl" type="text" readonly>@Model.Book.ImageUrl</textarea>
-            </div>
-            <div>
-                <label for="Book-Subtitle">Subtitel</label>
-                <input id="Book-Subtitle" name="Book-Title" type="text" value="@Model.Book.Subtitle" readonly>
-            </div>
-            <div>
-                <label for="Book-PublicationDate">Publicatiedatum</label>
-                <input id="Book-PublicationDate" name="Book-PublicationDate" type="text" value="@Model.Book.PublicationDate" readonly>
-            </div>
-            <div>
-                <label for="Book-Publisher">Uitgever</label>
-                <input id="Book-Publisher" name="Book-Publisher" type="text" value="@Model.Book.Publisher" readonly>
-            </div>
-            <div>
-                <label for="Book-Category">Categorie</label>
-                <input id="Book-Category" name="Book-Category" type="text" value="@Model.Book.Category" readonly>
-            </div>
-            <div>
-                <label for="Book-Price">Prijs</label>
-                <input id="Book-Price" name="Book-Price" type="text" value="@Model.Book.Price" readonly>
-            </div>
-            <div>
-                <label for="Book-Size">Afmetingen</label>
-                <input id="Book-Size" name="Book-Size" type="text" value="@Model.Book.Size" readonly>
-            </div>
-            <div>
-                <label for="Book-NumberOfPages">Aantal Pagina's</label>
-                <input id="Book-NumberOfPages" name="Book-NumberOfPages" type="text" value="@Model.Book.NumberOfPages" readonly>
-            </div>
-            <div>
-                <label for="Book-Language">Taal</label>
-                <input id="Book-Language" name="Book-Language" type="text" value="@Model.Book.Language" readonly>
-            </div>
-            <div>
-                <label for="Book-ProductCode">ISBN</label>
-                <input id="Book-ProductCode" name="Book-ProductCode" type="text" value="@Model.Book.ProductCode" readonly>
-            </div>
-            <div>
-                <label for="Book-ProductType">Product Type</label>
-                <input id="Book-ProductType" name="Book-ProductType" type="text" value="@Model.Book.ProductType" readonly>
-            </div>
-            <div>
-                <label for="Book-ProductTypeFull">Volledig product Type</label>
-                <input id="Book-ProductTypeFull" name="Book-ProductTypeFull" type="text" value="@Model.Book.ProductTypeFull" readonly>
-            </div>
-            <div>
-                <label for="Book-Description">Omschrijving</label>
-                <textarea id="Book-Description" name="Book-Description" type="text" readonly>@Model.Book.Description</textarea>
-            </div>*@
+        <div>
+            <label for="Book-ImageUrl">URL Cover</label>
+            <textarea id="Book-ImageUrl" name="Book-ImageUrl" type="text" readonly>@Model.Book.ImageUrl</textarea>
+        </div>
+        <div>
+            <label for="Book-Subtitle">Subtitel</label>
+            <input id="Book-Subtitle" name="Book-Title" type="text" value="@Model.Book.Subtitle" readonly>
+        </div>
+        <div>
+            <label for="Book-PublicationDate">Publicatiedatum</label>
+            <input id="Book-PublicationDate" name="Book-PublicationDate" type="text" value="@Model.Book.PublicationDate" readonly>
+        </div>
+        <div>
+            <label for="Book-Publisher">Uitgever</label>
+            <input id="Book-Publisher" name="Book-Publisher" type="text" value="@Model.Book.Publisher" readonly>
+        </div>
+        <div>
+            <label for="Book-Category">Categorie</label>
+            <input id="Book-Category" name="Book-Category" type="text" value="@Model.Book.Category" readonly>
+        </div>
+        <div>
+            <label for="Book-Price">Prijs</label>
+            <input id="Book-Price" name="Book-Price" type="text" value="@Model.Book.Price" readonly>
+        </div>
+        <div>
+            <label for="Book-Size">Afmetingen</label>
+            <input id="Book-Size" name="Book-Size" type="text" value="@Model.Book.Size" readonly>
+        </div>
+        <div>
+            <label for="Book-NumberOfPages">Aantal Pagina's</label>
+            <input id="Book-NumberOfPages" name="Book-NumberOfPages" type="text" value="@Model.Book.NumberOfPages" readonly>
+        </div>
+        <div>
+            <label for="Book-Language">Taal</label>
+            <input id="Book-Language" name="Book-Language" type="text" value="@Model.Book.Language" readonly>
+        </div>
+        <div>
+            <label for="Book-ProductCode">ISBN</label>
+            <input id="Book-ProductCode" name="Book-ProductCode" type="text" value="@Model.Book.ProductCode" readonly>
+        </div>
+        <div>
+            <label for="Book-ProductType">Product Type</label>
+            <input id="Book-ProductType" name="Book-ProductType" type="text" value="@Model.Book.ProductType" readonly>
+        </div>
+        <div>
+            <label for="Book-ProductTypeFull">Volledig product Type</label>
+            <input id="Book-ProductTypeFull" name="Book-ProductTypeFull" type="text" value="@Model.Book.ProductTypeFull" readonly>
+        </div>
+        <div>
+            <label for="Book-Description">Omschrijving</label>
+            <textarea id="Book-Description" name="Book-Description" type="text" readonly>@Model.Book.Description</textarea>
+        </div>
     </fieldset>
 </section>
-    <partial name="Book/_ReadingAll" model="Model.BookList" />
+<partial name="Book/_ReadingAll" model="Model.BookList" />
 </div>

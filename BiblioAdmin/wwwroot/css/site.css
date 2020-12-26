@@ -17,7 +17,6 @@ body {
     grid-column-gap: 10px;*/
 }
 
-
 .centerContainer {
     max-width: 1180px;
     margin: 0px auto;
@@ -139,15 +138,28 @@ th {
     text-decoration: none;
     color: #e20513;
     margin-left: 15px;
-
 }
 
     .select:hover {
-     font-weight:900;
-     font-size: larger;
-     margin-left: 12px;
+        font-weight: 900;
+        font-size: larger;
+        margin-left: 12px;
     }
 
+/*Make links appaer as buttons*/
+.linkAsButton, button {
+    background-color: #E20513;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    padding: 10px 10px 12px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
 
 /*Footer*/
 
@@ -193,15 +205,13 @@ footer {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-areas: "section aside";
-  
     }
+
     section {
         margin: 50px 25px 50px 0;
-
     }
 
-    aside{
+    aside {
         margin: 50px 0 50px 25px;
- 
     }
 }
