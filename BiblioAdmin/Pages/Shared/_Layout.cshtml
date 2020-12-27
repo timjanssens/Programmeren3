@@ -17,11 +17,11 @@
     <div class="centerContainer">
         <div class="content-wrap">
             <header class="head">
-                <a class="logo" asp-area="" asp-page="/Index">
+                <a class="logo onlyVisibleOnBig" asp-area="" asp-page="/Index">
                     <img src="~/img/logobookshelf.jpg" alt="BiblioShopLogo" />
                 </a>
                 <nav class="horizontal-nav">
-                    @*<a asp-area="" asp-page="/Index">Home</a>*@
+                    <a asp-area="" asp-page="/Index" class="onlyVisibleOnMobile">Home</a>
                     <a asp-area="" asp-page="/Book/Index">Book</a>
                     <a asp-area="" asp-page="/Customer/Index">Customer</a>
                     <a asp-area="" asp-page="/OrderStatus/Index">Order Status</a>

@@ -15,34 +15,44 @@
     </div>
     <form method="post" id="updateOrderItem">
         <fieldset>
-            <div>
-                <label asp-for="OrderItem.BookId">Titel</label>
-                <select id="OrderItem_BookId" name="OrderItem.BookId">
-                    @foreach (var item in Model.BookList)
-                    {
-                        <option value="@item.Id">@item.Title</option>
-                    }
-                </select>
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="OrderItem.Id">ID</label>
+                </div>
+                <div class="col-75">
+                    <input asp-for="OrderItem.Id" readonly=" @(true)" />
+                </div>
             </div>
-            <div>
-                <label asp-for="OrderItem.BookId"></label>
-                <input asp-for="OrderItem.BookId" />
-                <span class="alert-danger" asp-validation-for="OrderItem.BookId"></span>
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="OrderItem.BookId">Titel</label>
+                </div>
+                <div class="col-75">
+                    <select id="OrderItem_BookId" name="OrderItem.BookId">
+                        @foreach (var item in Model.BookList)
+                        {
+                            <option value="@item.Id">@item.Title</option>
+                        }
+                    </select>
+                </div>
             </div>
-            <div>
-                <label asp-for="OrderItem.OrderId"></label>
-                <input asp-for="OrderItem.OrderId" />
-                <span class="alert-danger" asp-validation-for="OrderItem.OrderId"></span>
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="OrderItem.OrderId">Order id</label>
+                </div>
+                <div class="col-75">
+                    <input asp-for="OrderItem.OrderId" />
+                </div>
             </div>
-            <div>
-                <label asp-for="OrderItem.Quantity"></label>
-                <input asp-for="OrderItem.Quantity" />
-                <span class="alert-danger" asp-validation-for="OrderItem.Quantity"></span>
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="OrderItem.Quantity">Hoeveelheid</label>
+                </div>
+                <div class="col-75">
+                    <input asp-for="OrderItem.Quantity" />
+                </div>
             </div>
         </fieldset>
-        @*<div>
-            <button type="submit" value="Update" asp-page-handler="Update">Update</button>
-        </div>*@
     </form>
 </section>
 <partial name="OrderItem/_ReadingAll" model="Model.OrderItemList" />

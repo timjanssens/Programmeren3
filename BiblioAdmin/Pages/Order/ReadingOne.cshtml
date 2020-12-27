@@ -21,33 +21,61 @@
         </div>
     </div>
     <fieldset>
-        <div>
-            <label for="Order-Id">Id</label>
-            <input id="Order-Id" name="Order-Id" type="text" value="@Model.Order.Id" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label for="Order-Id">Id</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="Order.Id" readonly=" @(true)">
+            </div>
         </div>
-        <div>
-            <label for="Order-OrderDate">Bestel Datum</label>
-            <input id="Order-OrderDate" name="Order-OrderDate" type="text" value="@Model.Order.OrderDate" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label for="Order-OrderDate">Bestel Datum</label>
+            </div>
+            <div class="col-75">
+                <input id="Order-OrderDate" name="Order-OrderDate" type="text" value="@Model.Order.OrderDate" readonly>
+            </div>
         </div>
-        <div>
-            <label for="Order-ShippingDate">Verzend Datum</label>
-            <input id="Order-ShippingDate" name="Order-ShippingDate" type="text" value="@Model.Order.ShippingDate" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label for="Order-ShippingDate">Verzend Datum</label>
+            </div>
+            <div class="col-75">
+                <input id="Order-ShippingDate" name="Order-ShippingDate" type="text" value="@Model.Order.ShippingDate" readonly>
+            </div>
         </div>
-        <div>
-            <label for="Order-Comment">Opmerking</label>
-            <input id="Order-Comment" name="Order-Comment" type="text" value="@Model.Order.Comment" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label for="Order-Comment">Opmerking</label>
+            </div>
+            <div class="col-75">
+                <input id="Order-Comment" name="Order-Comment" type="text" value="@Model.Order.Comment" readonly>
+            </div>
         </div>
-        <div>
-            <label for="Order-CustomerId">Klant</label>
-            <input id="Order-CustomerId" name="Order-CustomerId" type="text" value="@Model.Order.Customer.FirstName @Model.Order.Customer.LastName" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label for="Order-CustomerId">Klant</label>
+            </div>
+            <div class="col-75">
+                <input id="Order-CustomerId" name="Order-CustomerId" type="text" value="@Model.Order.Customer.FirstName @Model.Order.Customer.LastName" readonly>
+            </div>
         </div>
-        <div>
-            <label for="Order-ShippingMethodId">Verzend methode</label>
-            <input id="Order-ShippingMethodId" name="Order-ShippingMethodId" type="text" value="@Model.Order.ShippingMethod.Name" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label for="Order-ShippingMethodId">Verzend methode</label>
+            </div>
+            <div class="col-75">
+                <input id="Order-ShippingMethodId" name="Order-ShippingMethodId" type="text" value="@Model.Order.ShippingMethod.Name" readonly>
+            </div>
         </div>
-        <div>
-            <label for="Order-StatusId">Status</label>
-            <input id="Order-StatusId" name="Order-StatusId" type="text" value="@Model.Order.Status.Name" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label for="Order-StatusId">Status</label>
+            </div>
+            <div class="col-75">
+                <input id="Order-StatusId" name="Order-StatusId" type="text" value="@Model.Order.Status.Name" readonly>
+            </div>
         </div>
     </fieldset>
 

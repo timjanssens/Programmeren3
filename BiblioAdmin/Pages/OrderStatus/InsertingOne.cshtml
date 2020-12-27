@@ -16,19 +16,27 @@
 
     <form method="post" id="inputOrderStatus">
         <fieldset>
-            <div>
-                <label asp-for="OrderStatus.Name"></label>
-                <input asp-for="OrderStatus.Name" required="required" />
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="OrderStatus.Name">Naam  *</label>
+                </div>
+                <div class="col-75">
+                    <input asp-for="OrderStatus.Name" required="required" />
                 <span class="alert-danger" asp-validation-for="OrderStatus.Name"></span>
+                </div>
             </div>
             <div>
-                <label asp-for="OrderStatus.Description"></label>
-                <textarea asp-for="OrderStatus.Description"></textarea>
+                <div class="row">
+                    <div class="col-25">
+                        <label asp-for="OrderStatus.Description">Beschrijving</label>
+                    </div>
+                    <div class="col-75">
+                        <textarea asp-for="OrderStatus.Description"></textarea>
+                    </div>
+                </div>
             </div>
+
         </fieldset>
-        @*<div>
-            <button type="submit" value="Insert" asp-page-handler="Insert">Insert</button>
-        </div>*@
     </form>
 </section>
 <partial name="OrderStatus/_ReadingAll" model="Model.OrderStatusList" />

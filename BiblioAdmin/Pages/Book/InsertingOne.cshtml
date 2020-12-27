@@ -15,85 +15,142 @@
     </div>
     <form method="post" id="inputBook">
         <fieldset>
-            <div>
-                <label asp-for="Book.Author"></label>
-                <input asp-for="Book.Author" required="required" />
-                <span class="alert-danger" asp-validation-for="Book.Author"></span>
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="Book.Author">Auteur *</label>
+                </div>
+                <div class="col-75">
+                    <input asp-for="Book.Author" required="required" />
+                    <span class="alert-danger" asp-validation-for="Book.Author"></span>
+                </div>
             </div>
-            <div>
-                <label asp-for="Book.Title"></label>
-                <input asp-for="Book.Title" required="required" />
-                <span class="alert-danger" asp-validation-for="Book.Title"></span>
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="Book.Title">Titel *</label>
+                </div>
+                <div class="col-75">
+                    <input asp-for="Book.Title" required="required" />
+                    <span class="alert-danger" asp-validation-for="Book.Title"></span>
+                </div>
             </div>
-            <div>
-                <label asp-for="Book.ImageUrl"></label>
-                <input asp-for="Book.ImageUrl" />
-                <span class="alert-danger" asp-validation-for="Book.ImageUrl"></span>
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="Book.ImageUrl">FotoURL</label>
+                </div>
+                <div class="col-75">
+                    <input asp-for="Book.ImageUrl" />
+                    <span class="alert-danger" asp-validation-for="Book.ImageUrl"></span>
+                </div>
             </div>
-            <div>
-                <label asp-for="Book.Subtitle"></label>
-                <input asp-for="Book.Subtitle" />
-                <span class="alert-danger" asp-validation-for="Book.Subtitle"></span>
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="Book.Subtitle">Ondertitel</label>
+                </div>
+                <div class="col-75">
+                    <input asp-for="Book.Subtitle" />
+                    <span class="alert-danger" asp-validation-for="Book.Subtitle"></span>
+                </div>
             </div>
-            <div>
-                <label asp-for="Book.PublicationDate"></label>
-                <input asp-for="Book.PublicationDate" />
-                <span class="alert-danger" asp-validation-for="Book.PublicationDate"></span>
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="Book.PublicationDate">Publicatie datum</label>
+                </div>
+                <div class="col-75">
+                    <input asp-for="Book.PublicationDate" />
+                    <span class="alert-danger" asp-validation-for="Book.PublicationDate"></span>
+                </div>
             </div>
-            <div>
-                <label asp-for="Book.Publisher"></label>
-                <input asp-for="Book.Publisher" />
-                <span class="alert-danger" asp-validation-for="Book.Publisher"></span>
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="Book.Publisher">Uitgever</label>
+                </div>
+                <div class="col-75">
+                    <input asp-for="Book.Publisher" />
+                    <span class="alert-danger" asp-validation-for="Book.Publisher"></span>
+                </div>
             </div>
-            <div>
-                <label asp-for="Book.Category"></label>
-                <input asp-for="Book.Category" />
-                <span class="alert-danger" asp-validation-for="Book.Category"></span>
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="Book.Category">Categorie</label>
+                </div>
+                <div class="col-75">
+                    <input asp-for="Book.Category" />
+                    <span class="alert-danger" asp-validation-for="Book.Category"></span>
+                </div>
             </div>
-            <div>
-                <label asp-for="Book.Price"></label>
-                <input asp-for="Book.Price" />
-                <span class="alert-danger" asp-validation-for="Book.Price"></span>
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="Book.Price">Prijs</label>
+                </div>
+                <div class="col-75">
+                    <input asp-for="Book.Price" />
+                    <span class="alert-danger" asp-validation-for="Book.Price"></span>
+                </div>
             </div>
-            <div>
-                <label asp-for="Book.Size"></label>
-                <input asp-for="Book.Size" />
-                <span class="alert-danger" asp-validation-for="Book.Size"></span>
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="Book.Size">Afmeting</label>
+                </div>
+                <div class="col-75">
+                    <input asp-for="Book.Size" />
+                    <span class="alert-danger" asp-validation-for="Book.Size"></span>
+                </div>
             </div>
-            <div>
-                <label asp-for="Book.NumberOfPages"></label>
-                <input asp-for="Book.NumberOfPages" />
-                <span class="alert-danger" asp-validation-for="Book.NumberOfPages"></span>
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="Book.NumberOfPages">Aantal pagina's</label>
+                </div>
+                <div class="col-75">
+                    <input asp-for="Book.NumberOfPages" />
+                    <span class="alert-danger" asp-validation-for="Book.NumberOfPages"></span>
+                </div>
             </div>
-            <div>
-                <label asp-for="Book.Language"></label>
-                <input asp-for="Book.Language" />
-                <span class="alert-danger" asp-validation-for="Book.Language"></span>
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="Book.Language">Taal</label>
+                </div>
+                <div class="col-75">
+                    <input asp-for="Book.Language" />
+                    <span class="alert-danger" asp-validation-for="Book.Language"></span>
+                </div>
             </div>
-            <div>
-                <label asp-for="Book.ProductCode"></label>
-                <input asp-for="Book.ProductCode" />
-                <span class="alert-danger" asp-validation-for="Book.ProductCode"></span>
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="Book.ProductCode">ISBN</label>
+                </div>
+                <div class="col-75">
+                    <input asp-for="Book.ProductCode" />
+                    <span class="alert-danger" asp-validation-for="Book.ProductCode"></span>
+                </div>
             </div>
-            <div>
-                <label asp-for="Book.ProductType"></label>
-                <input asp-for="Book.ProductType" />
-                <span class="alert-danger" asp-validation-for="Book.ProductType"></span>
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="Book.ProductType">Producttype</label>
+                </div>
+                <div class="col-75">
+                    <input asp-for="Book.ProductType" />
+                    <span class="alert-danger" asp-validation-for="Book.ProductType"></span>
+                </div>
             </div>
-            <div>
-                <label asp-for="Book.ProductTypeFull"></label>
-                <input asp-for="Book.ProductTypeFull" />
-                <span class="alert-danger" asp-validation-for="Book.ProductTypeFull"></span>
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="Book.ProductTypeFull">Producttype volledig</label>
+                </div>
+                <div class="col-75">
+                    <input asp-for="Book.ProductTypeFull" />
+                    <span class="alert-danger" asp-validation-for="Book.ProductTypeFull"></span>
+                </div>
             </div>
-            <div>
-                <label asp-for="Book.Description"></label>
-                <input asp-for="Book.Description" />
-                <span class="alert-danger" asp-validation-for="Book.Description"></span>
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="Book.Description">Omschrijving</label>
+                </div>
+                <div class="col-75">
+                    <input asp-for="Book.Description" />
+                    <span class="alert-danger" asp-validation-for="Book.Description"></span>
+                </div>
             </div>
         </fieldset>
-        @*<div>
-            <button type="submit" value="Insert" asp-page-handler="Insert">Insert</button>
-        </div>*@
     </form>
 </section>
 <partial name="Book/_ReadingAll" model="Model.BookList" />

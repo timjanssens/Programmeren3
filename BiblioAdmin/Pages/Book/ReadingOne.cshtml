@@ -16,76 +16,139 @@
             <a asp-page="./ReadingOne" onclick="return confirm('Weet je zeker dat je dit Book wilt deleten?');"
                asp-page-handler="Delete" asp-route-id="@Model.Book.Id" class="linkAsButton">Delete</a>
             <a class="linkAsButton" href="/Book/Index">
-               Cancel
+                Cancel
             </a>
         </div>
     </div>
     <fieldset>
-        <div>
-            <label for="Book-Id">Id</label>
-            <input id="Book-Id" name="Book-Id" type="text" value="@Model.Book.Id" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label for="Book-Id">Id</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="Book.Id" readonly=" @(true)" >
+            </div>
         </div>
-        <div>
-            <label for="Book-Author">Auteur</label>
-            <input id="Book-Author" name="Book-Author" type="text" value="@Model.Book.Author" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label asp-for="Book.Author">Auteur *</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="Book.Author" readonly=" @(true)" />
+            </div>
         </div>
-        <div>
-            <label for="Book-Title">Titel</label>
-            <input id="Book-Title" name="Book-Title" type="text" value="@Model.Book.Title" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label asp-for="Book.Title">Titel *</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="Book.Title" readonly=" @(true)" />
+            </div>
         </div>
-        <div>
-            <label for="Book-ImageUrl">URL Cover</label>
-            <textarea id="Book-ImageUrl" name="Book-ImageUrl" type="text" readonly>@Model.Book.ImageUrl</textarea>
+        <div class="row">
+            <div class="col-25">
+                <label asp-for="Book.ImageUrl">FotoURL</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="Book.ImageUrl" readonly=" @(true)" />
+            </div>
         </div>
-        <div>
-            <label for="Book-Subtitle">Subtitel</label>
-            <input id="Book-Subtitle" name="Book-Title" type="text" value="@Model.Book.Subtitle" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label asp-for="Book.Subtitle">Ondertitel</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="Book.Subtitle" readonly=" @(true)" />
+            </div>
         </div>
-        <div>
-            <label for="Book-PublicationDate">Publicatiedatum</label>
-            <input id="Book-PublicationDate" name="Book-PublicationDate" type="text" value="@Model.Book.PublicationDate" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label asp-for="Book.PublicationDate">Publicatie datum</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="Book.PublicationDate"  readonly=" @(true)"/>
+            </div>
         </div>
-        <div>
-            <label for="Book-Publisher">Uitgever</label>
-            <input id="Book-Publisher" name="Book-Publisher" type="text" value="@Model.Book.Publisher" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label asp-for="Book.Publisher">Uitgever</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="Book.Publisher"  readonly=" @(true)"/>
+            </div>
         </div>
-        <div>
-            <label for="Book-Category">Categorie</label>
-            <input id="Book-Category" name="Book-Category" type="text" value="@Model.Book.Category" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label asp-for="Book.Category">Categorie</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="Book.Category" readonly=" @(true)" />
+            </div>
         </div>
-        <div>
-            <label for="Book-Price">Prijs</label>
-            <input id="Book-Price" name="Book-Price" type="text" value="@Model.Book.Price" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label asp-for="Book.Price">Prijs</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="Book.Price"  readonly=" @(true)"/>
+            </div>
         </div>
-        <div>
-            <label for="Book-Size">Afmetingen</label>
-            <input id="Book-Size" name="Book-Size" type="text" value="@Model.Book.Size" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label asp-for="Book.Size">Afmeting</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="Book.Size"  readonly=" @(true)"/>
+            </div>
         </div>
-        <div>
-            <label for="Book-NumberOfPages">Aantal Pagina's</label>
-            <input id="Book-NumberOfPages" name="Book-NumberOfPages" type="text" value="@Model.Book.NumberOfPages" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label asp-for="Book.NumberOfPages">Aantal pagina's</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="Book.NumberOfPages"  readonly=" @(true)"/>
+            </div>
         </div>
-        <div>
-            <label for="Book-Language">Taal</label>
-            <input id="Book-Language" name="Book-Language" type="text" value="@Model.Book.Language" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label asp-for="Book.Language">Taal</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="Book.Language" readonly=" @(true)" />
+            </div>
         </div>
-        <div>
-            <label for="Book-ProductCode">ISBN</label>
-            <input id="Book-ProductCode" name="Book-ProductCode" type="text" value="@Model.Book.ProductCode" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label asp-for="Book.ProductCode">ISBN</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="Book.ProductCode"  readonly=" @(true)"/>
+            </div>
         </div>
-        <div>
-            <label for="Book-ProductType">Product Type</label>
-            <input id="Book-ProductType" name="Book-ProductType" type="text" value="@Model.Book.ProductType" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label asp-for="Book.ProductType">Producttype</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="Book.ProductType"  readonly=" @(true)"/>
+            </div>
         </div>
-        <div>
-            <label for="Book-ProductTypeFull">Volledig product Type</label>
-            <input id="Book-ProductTypeFull" name="Book-ProductTypeFull" type="text" value="@Model.Book.ProductTypeFull" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label asp-for="Book.ProductTypeFull">Producttype volledig</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="Book.ProductTypeFull"  readonly=" @(true)"/>
+            </div>
         </div>
-        <div>
-            <label for="Book-Description">Omschrijving</label>
-            <textarea id="Book-Description" name="Book-Description" type="text" readonly>@Model.Book.Description</textarea>
+        <div class="row">
+            <div class="col-25">
+                <label asp-for="Book.Description">Omschrijving</label>
+            </div>
+            <div class="col-75">
+                <textarea asp-for="Book.Description" readonly=" @(true)"></textarea>
+            </div>
         </div>
     </fieldset>
 </section>
 <partial name="Book/_ReadingAll" model="Model.BookList" />
-</div>

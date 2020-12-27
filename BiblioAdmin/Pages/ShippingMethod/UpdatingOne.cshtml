@@ -16,30 +16,40 @@
     </div>
     <form method="post" id="updateShippingMethod">
         <fieldset>
-            <div>
-                <label asp-for="ShippingMethod.Id"></label>
-                <input asp-for="ShippingMethod.Id" readonly=" @(true)" />
+            <div class="row">
+                <div class="col-25">
+                    <label for="ShippingMethod-Id">Id</label>
+                </div>
+                <div class="col-75">
+                    <input asp-for="ShippingMethod.Id" readonly=" @(true)">
+                </div>
             </div>
-            <div>
-                <label asp-for="ShippingMethod.Name"></label>
-                <input asp-for="ShippingMethod.Name" />
-                <span class="alert-danger" asp-validation-for="ShippingMethod.Name"></span>
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="ShippingMethod.Name"></label>
+                </div>
+                <div class="col-75">
+                    <input asp-for="ShippingMethod.Name" required="required" />
+                </div>
             </div>
-            <div>
-                <label asp-for="ShippingMethod.Description"></label>
-                <input asp-for="ShippingMethod.Description" />
-                <span class="alert-danger" asp-validation-for="ShippingMethod.Description"></span>
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="ShippingMethod.Description"></label>
+                </div>
+                <div class="col-75">
+                    <input asp-for="ShippingMethod.Description" required="required" />
+                </div>
             </div>
-            <div>
-                <label asp-for="ShippingMethod.Price"></label>
-                <input asp-for="ShippingMethod.Price" />
-                <span class="alert-danger" asp-validation-for="ShippingMethod.Price"></span>
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="ShippingMethod.Price"></label>
+                </div>
+                <div class="col-75">
+                    <input asp-for="ShippingMethod.Price" required="required" />
+                    <span class="alert-danger" asp-validation-for="ShippingMethod.Price"></span>
+                </div>
             </div>
-
         </fieldset>
-        <div>
-            <button type="submit" value="Update" asp-page-handler="Update">Update</button>
-        </div>
     </form>
 </section>
 <partial name="ShippingMethod/_ReadingAll" model="Model.ShippingMethodList" />

@@ -21,39 +21,79 @@
         </div>
     </div>
     <fieldset>
-        <div>
-            <label for="Customer-Id">Id</label>
-            <input id="Customer-Id" name="Customer-Id" type="text" value="@Model.Customer.Id" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label for="Customer-Id">Id</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="Customer.Id" readonly=" @(true)" >
+            </div>
         </div>
-        <div>
-            <label for="Customer-FirstName">Voornaam</label>
-            <input id="Customer-FirstName" name="Customer-FirstName" type="text" value="@Model.Customer.FirstName" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label asp-for="Customer.FirstName">Voornaam *</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="Customer.FirstName"  readonly=" @(true)" />
+            </div>
         </div>
-        <div>
-            <label for="Customer-LastName">Naam</label>
-            <input id="Customer-LastName" name="Customer-LastName" type="text" value="@Model.Customer.LastName" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label asp-for="Customer.LastName">Familienaam *</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="Customer.LastName"  readonly=" @(true)"  />
+            </div>
         </div>
-        <div>
-            <label for="Customer-Address">Adres</label>
-            <input id="Customer-Address" name="Customer-Address" type="text" value="@Model.Customer.Address" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label asp-for="Customer.Email">E-mail *</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="Customer.Email"  readonly=" @(true)"  />
+            </div>
         </div>
-        <div>
-            <label for="Customer-City">Stad</label>
-            <input id="Customer-City" name="Customer-City" type="text" value="@Model.Customer.City" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label asp-for="Customer.Address">Adres</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="Customer.Address"  readonly=" @(true)" />
+            </div>
         </div>
-        <div>
-            <label for="Customer-PostalCode">Postcode</label>
-            <input id="Customer-PostalCode" name="Customer-PostalCode" type="text" value="@Model.Customer.PostalCode" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label asp-for="Customer.City">Stad *</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="Customer.City"  readonly=" @(true)"  />
+            </div>
         </div>
-        <div>
-            <label for="Customer-Country">Land</label>
-            <input id="Customer-Country" name="Customer-Country" type="text" value="@Model.Customer.Country" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label asp-for="Customer.PostalCode">Postcode</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="Customer.PostalCode"  readonly=" @(true)" />
+            </div>
         </div>
-        <div>
-            <label for="Customer-Phone">Telefoonnummer</label>
-            <input id="Customer-Phone" name="Customer-Phone" type="text" value="@Model.Customer.Phone" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label asp-for="Customer.Country">Land</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="Customer.Country"  readonly=" @(true)" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label asp-for="Customer.Phone">Telefoon</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="Customer.Phone"  readonly=" @(true)" />
+            </div>
         </div>
     </fieldset>
 
 </section>
-    <partial name="Customer/_ReadingAll" model="Model.CustomerList" />
+<partial name="Customer/_ReadingAll" model="Model.CustomerList" />

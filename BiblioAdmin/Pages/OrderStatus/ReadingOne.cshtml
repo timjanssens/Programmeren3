@@ -22,17 +22,32 @@
         </div>
     </div>
     <fieldset>
-        <div>
-            <label for="OrderStatus-Id">Id</label>
-            <input id="OrderStatus-Id" name="OrderStatus-Id" type="text" value="@Model.OrderStatus.Id" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label asp-for="OrderStatus.Id">ID</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="OrderStatus.Id" readonly=" @(true)" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label asp-for="OrderStatus.Name">Naam  *</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="OrderStatus.Name" required="required" readonly=" @(true)"/>
+            </div>
+            <span class="alert-danger" asp-validation-for="OrderStatus.Name"></span>
         </div>
         <div>
-            <label for="OrderStatus-Name">Naam</label>
-            <input id="OrderStatus-Name" name="OrderStatus-Name" type="text" value="@Model.OrderStatus.Name" readonly>
-        </div>
-        <div>
-            <label for="OrderStatus-Description">Beschrijving</label>
-            <textarea id="OrderStatus-Description" name="OrderStatus-Description" type="text" readonly>@Model.OrderStatus.Description</textarea>
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="OrderStatus.Description">Beschrijving</label>
+                </div>
+                <div class="col-75">
+                    <textarea asp-for="OrderStatus.Description" readonly=" @(true)"></textarea>
+                </div>
+            </div>
         </div>
     </fieldset>
 </section>

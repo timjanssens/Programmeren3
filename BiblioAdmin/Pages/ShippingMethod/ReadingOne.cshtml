@@ -21,22 +21,39 @@
         </div>
     </div>
     <fieldset>
-        <div>
-            <label for="ShippingMethod-Id">Id</label>
-            <input id="ShippingMethod-Id" name="ShippingMethod-Id" type="text" value="@Model.ShippingMethod.Id" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label for="ShippingMethod-Id">Id</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="ShippingMethod.Id" readonly=" @(true)" >
+            </div>
         </div>
-        <div>
-            <label for="ShippingMethod-Name">Naam</label>
-            <input id="ShippingMethod-Name" name="ShippingMethod-Name" type="text" value="@Model.ShippingMethod.Name" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label for="ShippingMethod-Name">Naam</label>
+            </div>
+            <div class="col-75">
+                <input id="ShippingMethod-Name" name="ShippingMethod-Name" type="text" value="@Model.ShippingMethod.Name" readonly>
+            </div>
         </div>
-        <div>
-            <label for="ShippingMethod-description">Beschrijving</label>
-            <input id="ShippingMethod-description" name="ShippingMethod-description" type="text" value="@Model.ShippingMethod.Description" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label for="ShippingMethod-description">Beschrijving</label>
+            </div>
+            <div class="col-75">
+                <input id="ShippingMethod-description" name="ShippingMethod-description" type="text" value="@Model.ShippingMethod.Description" readonly>
+            </div>
         </div>
-        <div>
-            <label for="ShippingMethod-Price">Prijs</label>
-            <input id="ShippingMethod-Price" name="ShippingMethod-Price" type="text" value="@Model.ShippingMethod.Price" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label for="ShippingMethod-Price">Prijs</label>
+            </div>
+            <div class="col-75">
+                <input id="ShippingMethod-Price" name="ShippingMethod-Price" type="text" value="@Model.ShippingMethod.Price" readonly>
+            </div>
         </div>
+
     </fieldset>
 </section>
 

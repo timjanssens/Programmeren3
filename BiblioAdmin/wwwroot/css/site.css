@@ -6,7 +6,7 @@
 
 body {
     height: 100%;
-    width: 100%;
+    width: 100% -25px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     /* define mobile grid (Mobile-First) */
     /*  grid-template-rows: 120px 70px 1fr 70px;*/
@@ -40,9 +40,17 @@ body {
     flex-basis: 160px;
 }
 
-    .logo img {
-        height: 130px;
-    }
+.onlyVisibleOnMobil{
+    display: block;
+}
+
+.onlyVisibleOnBig {
+    display: none;
+}
+
+.logo img {
+    height: 130px;
+}
 
     .logo img {
         height: 130px;
@@ -101,8 +109,8 @@ body {
 
 /*logo op home page*/
 .logoHome {
-    width: 350px;
-    margin: 50px 0 0 80px;
+    width: 300px;
+    margin: 50px 50px;
 }
 
 /*table*/
@@ -180,7 +188,44 @@ th {
     margin-left: 25px;
 }
 
+/*form*/
+fieldset {
+    margin-top: 10px;
+    background-color: #f2f2f2;
+    border: 1px solid #BFBFBF;
+    box-shadow: 7px 7px 4px #aaaaaa;
+    padding: 15px;
+}
+input[type=text], input[type=date], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
 
+input[type=number] {
+    border: none;
+    padding: 12px;
+    background-color: #f2f2f2;
+    pointer-events: none;
+}
+
+.col-25, .col-75 {
+    width: 100%;
+    margin-top: 0;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
 
 
 /*Footer*/
@@ -192,23 +237,6 @@ footer {
     width: 100%;
     height: 2.5rem; /* Footer height */
 }
-
-/*@media all and (min-width: 575px) {
-
-    body {
-        grid-template-areas: "kop kop" "zijbalk uitleg" "zijbalk showroom" "voet voet";
-        grid-template-rows: 120px 70px 1fr 70px;
-        grid-template-columns: 12em 1fr;
-    }
-
-    .sidebar {
-        display: block;
-    }
-}*/
-
-
-
-
 
 
 
@@ -226,6 +254,13 @@ footer {
         margin: 100px 0 0 250px;
     }
 
+    .onlyVisibleOnMobile{
+        display: none;
+    }
+
+    .onlyVisibleOnBig{
+        display: block
+    }
     main {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -239,4 +274,19 @@ footer {
     aside {
         margin: 50px 0 50px 25px;
     }
+
+
+    .col-25 {
+        float: left;
+        width: 25%;
+        margin-top: 6px;
+    }
+
+    .col-75 {
+        float: left;
+        width: 75%;
+        margin-top: 6px;
+    }
+
+
 }

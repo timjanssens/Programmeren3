@@ -22,21 +22,37 @@
         </div>
     </div>
     <fieldset>
-        <div>
-            <label for="OrderItem-Id">Id</label>
-            <input id="OrderItem-Id" name="OrderItem-Id" type="text" value="@Model.OrderItem.Id" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label asp-for="OrderItem.Id">ID</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="OrderItem.Id" readonly=" @(true)" />
+            </div>
         </div>
-        <div>
-            <label for="OrderItem-BookId">Naam</label>
-            <input id="OrderItem-BookId" name="OrderItem-BookId" type="text" value="@Model.OrderItem.Book.Author" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label asp-for="OrderItem.BookId">Titel</label>
+            </div>
+            <div class="col-75">
+                <input id="OrderItem-BookId" name="OrderItem-BookId" type="text" value="@Model.OrderItem.Book.Author" readonly>
+            </div>
         </div>
-        <div>
-            <label for="OrderItem-OrderId">Order Nummer</label>
-            <input id="OrderItem-OrderId" name="OrderItem-OrderId" type="text" value="@Model.OrderItem.OrderId" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label asp-for="OrderItem.OrderId">Order id</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="OrderItem.OrderId" readonly=" @(true)" />
+            </div>
         </div>
-        <div>
-            <label for="OrderItem-Quantity">Hoeveelheid</label>
-            <input id="OrderItem-Quantity" name="OrderItem-Quantity" type="text" value="@Model.OrderItem.Quantity" readonly>
+        <div class="row">
+            <div class="col-25">
+                <label asp-for="OrderItem.Quantity">Hoeveelheid</label>
+            </div>
+            <div class="col-75">
+                <input asp-for="OrderItem.Quantity" readonly=" @(true)" />
+            </div>
         </div>
     </fieldset>
 </section>

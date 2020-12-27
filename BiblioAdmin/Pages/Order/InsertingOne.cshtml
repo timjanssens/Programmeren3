@@ -16,54 +16,70 @@
 
     <form method="post" id="inputOrder">
         <fieldset>
-
-            <div>
-                <label asp-for="Order.OrderDate">Bestel datum</label>
-                <input asp-for="Order.OrderDate" />
-                <span class="alert-danger" asp-validation-for="Order.OrderDate"></span>
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="Order.OrderDate">Bestel datum *</label>
+                </div>
+                <div class="col-75">
+                    <input asp-for="Order.OrderDate" required="required" />
+                </div>
             </div>
-            <div>
-                <label asp-for="Order.ShippingDate">Verzend datum</label>
-                <input asp-for="Order.ShippingDate" />
-                <span class="alert-danger" asp-validation-for="Order.ShippingDate"></span>
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="Order.ShippingDate">Verzend datum*</label>
+                </div>
+                <div class="col-75">
+                    <input asp-for="Order.ShippingDate" required="required"/>
+                </div>
             </div>
-            <div>
-                <label asp-for="Order.Comment">Commentaar</label>
-                <input asp-for="Order.Comment" />
-                <span class="alert-danger" asp-validation-for="Order.Comment"></span>
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="Order.Comment">Commentaar</label>
+                </div>
+                <div class="col-75">
+                    <input asp-for="Order.Comment"/>
+                </div>
             </div>
-            <div>
-                <label asp-for="Order.CustomerId">Klant</label>
-                <select id="Order_CustomerId" name="Order.CustomerId">
-                    @foreach (var item in Model.CustomerList)
-                    {
-                        <option value="@item.Id">@item.FirstName @item.LastName</option>
-                    }
-                </select>
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="Order.CustomerId">Klant *</label>
+                </div>
+                <div class="col-75">
+                    <select id="Order_CustomerId" name="Order.CustomerId" required="required">
+                        @foreach (var item in Model.CustomerList)
+                        {
+                            <option value="@item.Id">@item.FirstName @item.LastName</option>
+                        }
+                    </select>
+                </div>
             </div>
-            <div>
-                <label asp-for="Order.ShippingMethodId">Verzendingsmethode</label>
-                <select id="Order_ShippingMethodId" name="Order.ShippingMethodId">
-                    @foreach (var item in Model.ShippingMethodList)
-                    {
-                        <option value="@item.Id">@item.Name</option>
-                    }
-                </select>
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="Order.ShippingMethodId">Verzending methode *</label>
+                </div>
+                <div class="col-75">
+                    <select id="Order_ShippingMethodId" name="Order.ShippingMethodId" required="required">
+                        @foreach (var item in Model.ShippingMethodList)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    </select>
+                </div>
             </div>
-            <div>
-                <label asp-for="Order.StatusId">Status</label>
-                <select id="Order_StatusId" name="Order.StatusId">
-                    @foreach (var item in Model.OrderStatusList)
-                    {
-                        <option value="@item.Id">@item.Name</option>
-                    }
-                </select>
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="Order.StatusId">Status *</label>
+                </div>
+                <div class="col-75">
+                    <select id="Order_StatusId" name="Order.StatusId" required="required">
+                        @foreach (var item in Model.OrderStatusList)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    </select>
+                </div>
             </div>
-
         </fieldset>
-        <div>
-            <button type="submit" value="Insert" asp-page-handler="Insert">Insert</button>
-        </div>
     </form>
 </section>
 <partial name="Order/_ReadingAll" model="Model.OrderList" />
