@@ -275,6 +275,10 @@ footer {
         margin: 50px 0 50px 25px;
     }
 
+    table {
+        margin-top: 46px;
+    }
+
 
     .col-25 {
         float: left;
