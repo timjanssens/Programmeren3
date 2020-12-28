@@ -30,7 +30,6 @@
                 </div>
                 <div class="col-75">
                     <input asp-for="Book.Author" required="required" />
-                    <span class="alert-danger" asp-validation-for="Book.Author"></span>
                 </div>
             </div>
             <div class="row">
@@ -39,7 +38,6 @@
                 </div>
                 <div class="col-75">
                     <input asp-for="Book.Title" required="required" />
-                    <span class="alert-danger" asp-validation-for="Book.Title"></span>
                 </div>
             </div>
             <div class="row">
@@ -48,7 +46,6 @@
                 </div>
                 <div class="col-75">
                     <input asp-for="Book.ImageUrl" />
-                    <span class="alert-danger" asp-validation-for="Book.ImageUrl"></span>
                 </div>
             </div>
             <div class="row">
@@ -57,7 +54,6 @@
                 </div>
                 <div class="col-75">
                     <input asp-for="Book.Subtitle" />
-                    <span class="alert-danger" asp-validation-for="Book.Subtitle"></span>
                 </div>
             </div>
             <div class="row">
@@ -66,7 +62,6 @@
                 </div>
                 <div class="col-75">
                     <input asp-for="Book.PublicationDate" />
-                    <span class="alert-danger" asp-validation-for="Book.PublicationDate"></span>
                 </div>
             </div>
             <div class="row">
@@ -75,7 +70,6 @@
                 </div>
                 <div class="col-75">
                     <input asp-for="Book.Publisher" />
-                    <span class="alert-danger" asp-validation-for="Book.Publisher"></span>
                 </div>
             </div>
             <div class="row">
@@ -84,7 +78,6 @@
                 </div>
                 <div class="col-75">
                     <input asp-for="Book.Category" />
-                    <span class="alert-danger" asp-validation-for="Book.Category"></span>
                 </div>
             </div>
             <div class="row">
@@ -92,8 +85,7 @@
                     <label asp-for="Book.Price">Prijs</label>
                 </div>
                 <div class="col-75">
-                    <input asp-for="Book.Price" />
-                    <span class="alert-danger" asp-validation-for="Book.Price"></span>
+                    <input asp-for="Book.Price" onkeypress="return isNumberKeyDecimal(event)"/>
                 </div>
             </div>
             <div class="row">
@@ -102,7 +94,6 @@
                 </div>
                 <div class="col-75">
                     <input asp-for="Book.Size" />
-                    <span class="alert-danger" asp-validation-for="Book.Size"></span>
                 </div>
             </div>
             <div class="row">
@@ -111,7 +102,6 @@
                 </div>
                 <div class="col-75">
                     <input asp-for="Book.NumberOfPages" />
-                    <span class="alert-danger" asp-validation-for="Book.NumberOfPages"></span>
                 </div>
             </div>
             <div class="row">
@@ -120,7 +110,6 @@
                 </div>
                 <div class="col-75">
                     <input asp-for="Book.Language" />
-                    <span class="alert-danger" asp-validation-for="Book.Language"></span>
                 </div>
             </div>
             <div class="row">
@@ -129,7 +118,6 @@
                 </div>
                 <div class="col-75">
                     <input asp-for="Book.ProductCode" />
-                    <span class="alert-danger" asp-validation-for="Book.ProductCode"></span>
                 </div>
             </div>
             <div class="row">
@@ -138,7 +126,6 @@
                 </div>
                 <div class="col-75">
                     <input asp-for="Book.ProductType" />
-                    <span class="alert-danger" asp-validation-for="Book.ProductType"></span>
                 </div>
             </div>
             <div class="row">
@@ -147,7 +134,6 @@
                 </div>
                 <div class="col-75">
                     <input asp-for="Book.ProductTypeFull" />
-                    <span class="alert-danger" asp-validation-for="Book.ProductTypeFull"></span>
                 </div>
             </div>
             <div class="row">
