@@ -78,6 +78,64 @@
             </div>
         </div>
     </fieldset>
+    <form method="post">
+        <h2>Order Items</h2>
+        <table class="list">
+            <thead>
+                <tr>
+                    <th>
+
+                    </th>
+                    <th>
+                        BookId
+                    </th>
+                    <th>
+                        OrderId
+                    </th>
+                    <th>
+                        Quantity
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.OrderItemList)
+                {
+                    <tr>
+                        <td>
+                            <button type="submit" name="OrderItem.Id" value="@item.Id" asp-page-handler="DeleteOrderItem">Delete</button>
+                        </td>
+                        <td>
+                            @item.BookId
+                        </td>
+                        <td>
+                            @item.OrderId
+                        </td>
+                        <td>
+                            @item.Quantity
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <h3>InsertingOne OrderItem</h3>
+        <hr />
+        <br />
+        <fieldset>
+            <input type="hidden" value="@Model.Order.Id" id="" name="OrderItem.OrderId" />
+            <div>
+                <label asp-for="OrderItem.BookId"></label>
+                <input asp-for="OrderItem.BookId" />
+            </div>
+
+            <div>
+                <label asp-for="OrderItem.Quantity"></label>
+                <input asp-for="OrderItem.Quantity" />
+            </div>
+        </fieldset>
+        <div>
+            <button type="submit" value="Insert" asp-page-handler="InsertOrderItem">Insert Order Item</button>
+        </div>
+    </form>
 
 </section>
 <partial name="Order/_ReadingAll" model="Model.OrderList" />

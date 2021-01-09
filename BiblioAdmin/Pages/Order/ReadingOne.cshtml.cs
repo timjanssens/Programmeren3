@@ -12,6 +12,8 @@ namespace BiblioAdmin.Pages.Order
         private readonly Bll.Student7Context DbContext;
         public Bll.Order Order { get; set; }
         public List<Bll.Order> OrderList { get; set; }
+        public List<Bll.OrderItem> OrderItemList { get; set; }
+        public Bll.OrderItem OrderItem { get; set; }
 
         public ReadingOneModel(Bll.Student7Context dbContext)
         {
@@ -24,7 +26,7 @@ namespace BiblioAdmin.Pages.Order
             Order.Status = DbContext.OrderStatus.SingleOrDefault(m => m.Id == this.Order.StatusId);
             Order.Customer = DbContext.Customer.SingleOrDefault(m => m.Id == this.Order.CustomerId);
             OrderList = DbContext.Order.ToList();
-
+            OrderItemList = DbContext.OrderItem.ToList();
         }
         public ActionResult OnGetDelete(int? id)
         {
@@ -38,6 +40,30 @@ namespace BiblioAdmin.Pages.Order
                 return RedirectToPage("Index");
             }
             return Page();
+        }
+
+
+        public ActionResult OnPostInsertOrderItem(Bll.OrderItem orderItem)
+        {
+            if (!ModelState.IsValid)
+            {
+                // als er een foutief gegeven is ingetypt ga terug
+                // de pagina en toon de fout
+                return Page(); // return page, nog een nieuwe ingeven
+            }
+            // dbContext.OrderItem.Update(orderItem);
+            DbContext.OrderItem.Add(orderItem);
+            DbContext.SaveChanges();
+            // keer terug naar de ReadingOne pagina van Order
+            return RedirectToPage("ReadingOne");
+        }
+
+        public ActionResult OnPostDeleteOrderItem(Bll.OrderItem orderItem)
+        {
+            DbContext.OrderItem.Remove(orderItem);
+            DbContext.SaveChanges();
+            return RedirectToPage("ReadingOne");
+
         }
     }
 }
