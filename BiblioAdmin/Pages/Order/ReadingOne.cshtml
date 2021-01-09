@@ -102,7 +102,7 @@
                 {
                     <tr>
                         <td>
-                            <button type="submit" name="OrderItem.Id" value="@item.Id" asp-page-handler="DeleteOrderItem">Delete</button>
+                            <button type="submit" name="OrderItem.Id" value="@item.Id" id="deleteOrderItem" asp-page-handler="DeleteOrderItem">Delete</button>
                         </td>
                         <td>
                             @item.BookId
@@ -118,23 +118,30 @@
             </tbody>
         </table>
         <h3>InsertingOne OrderItem</h3>
-        <hr />
         <br />
         <fieldset>
-            <input type="hidden" value="@Model.Order.Id" id="" name="OrderItem.OrderId" />
-            <div>
-                <label asp-for="OrderItem.BookId"></label>
-                <input asp-for="OrderItem.BookId" />
+            <input type="hidden" value="@Model.Order.Id" name="OrderItem.OrderId" />
+            <div class="row">
+                <div class="col-25">
+                    <label asp-for="OrderItem.BookId">Book ID</label>
+                </div>
+                <div class="col-75">
+                    <input asp-for="OrderItem.BookId"  />
+                </div>
             </div>
+            <div class="row">
+                <div class="col-25">
 
+                    <label asp-for="OrderItem.Quantity" > Hoeveelheid</label>
+                </div>
+                <div class="col-75">
+                    <input asp-for="OrderItem.Quantity"  />
+                </div>
+            </div>
             <div>
-                <label asp-for="OrderItem.Quantity"></label>
-                <input asp-for="OrderItem.Quantity" />
+                <button type="submit" value="Insert" asp-page-handler="InsertOrderItem">Insert Order Item</button>
             </div>
         </fieldset>
-        <div>
-            <button type="submit" value="Insert" asp-page-handler="InsertOrderItem">Insert Order Item</button>
-        </div>
     </form>
 
 </section>

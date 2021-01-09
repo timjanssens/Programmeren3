@@ -15,6 +15,7 @@ namespace BiblioAdmin.Pages.Order
         public List<Bll.Customer> CustomerList { get; set; }
         public List<Bll.OrderStatus> OrderStatusList { get; set; }
         public List<Bll.ShippingMethod> ShippingMethodList { get; set; }
+    
 
         private readonly Bll.Student7Context dbContext;
         // voeg constructor toe om geïnjecteerde DBContext 
