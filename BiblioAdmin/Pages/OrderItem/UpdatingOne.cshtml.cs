@@ -13,6 +13,7 @@ namespace BiblioAdmin.Pages.OrderItem
         public Bll.OrderItem OrderItem { get; set; }
         public List<Bll.OrderItem> OrderItemList { get; set; }
         public List<Bll.Book> BookList { get; set; }
+        public List<Bll.Order> OrderList { get; set; }
 
         private readonly Bll.Student7Context dbContext;
         // voeg constructor toe om geïnjecteerde DBContext 
@@ -26,6 +27,7 @@ namespace BiblioAdmin.Pages.OrderItem
             this.OrderItem = dbContext.OrderItem.SingleOrDefault(m => m.Id == id);
             this.BookList = dbContext.Book.ToList();
             OrderItemList = dbContext.OrderItem.ToList();
+            OrderList = dbContext.Order.ToList();
         }
 
 

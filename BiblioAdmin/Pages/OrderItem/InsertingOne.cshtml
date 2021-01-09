@@ -33,11 +33,11 @@
                     <label asp-for="OrderItem.OrderId">Order id</label>
                 </div>
                 <div class="col-75">
-                    @*<input asp-for="OrderItem.OrderId" />*@
+                    @*      <input asp-for="OrderItem.OrderId" />*@
                     <select id="OrderItem_OrderId" name="OrderItem.OrderId">
-                        @foreach (var item in Model.OrderItemList)
+                        @foreach (var item in Model.OrderList)
                         {
-                            <option value="@item.OrderId">@item.OrderId</option>
+                            <option value="@item.Id">@item.Id</option>
                         }
                     </select>
                 </div>

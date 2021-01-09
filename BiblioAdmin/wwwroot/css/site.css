@@ -198,7 +198,7 @@ fieldset {
     box-shadow: 7px 7px 4px #aaaaaa;
     padding: 15px;
 }
-input[type=text], input[type=date], select, textarea {
+input[type=text], input[type=date], select, textarea, input[type=number] {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -206,12 +206,9 @@ input[type=text], input[type=date], select, textarea {
     resize: vertical;
 }
 
-input[type=number] {
-    border: none;
-    padding: 12px;
-    background-color: #f2f2f2;
-    pointer-events: none;
-}
+
+
+
 
 .col-25, .col-75 {
     width: 100%;

@@ -11,6 +11,8 @@ namespace BiblioAdmin.Pages.OrderItem
     {
         private readonly Bll.Student7Context dbContext;
         public List<Bll.Book> BookList { get; set; }
+        public List<Bll.Order> OrderList { get; set; }
+
         public InsertingOneModel(Bll.Student7Context dbContext)
         {
             this.dbContext = dbContext;
@@ -22,6 +24,8 @@ namespace BiblioAdmin.Pages.OrderItem
         {
             OrderItemList = dbContext.OrderItem.ToList();
             this.BookList = dbContext.Book.ToList();
+            OrderList = dbContext.Order.ToList();
+
         }
 
         public ActionResult OnPostInsert(Bll.OrderItem orderItem)
