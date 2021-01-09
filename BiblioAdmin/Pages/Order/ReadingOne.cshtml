@@ -126,7 +126,13 @@
                     <label asp-for="OrderItem.BookId">Book ID</label>
                 </div>
                 <div class="col-75">
-                    <input asp-for="OrderItem.BookId"  />
+                    <input asp-for="OrderItem.BookId" />
+                    @*<select id="OrderItem_OrderId" name="OrderItem.OrderId">
+                        @foreach (var item in Model.BookList)
+                        {
+                            <option value="@item.Id">@item.Id</option>
+                        }
+                    </select>*@
                 </div>
             </div>
             <div class="row">

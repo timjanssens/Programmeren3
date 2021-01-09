@@ -14,6 +14,7 @@ namespace BiblioAdmin.Pages.Order
         public List<Bll.Order> OrderList { get; set; }
         public List<Bll.OrderItem> OrderItemList { get; set; }
         public Bll.OrderItem OrderItem { get; set; }
+        public List<Bll.Book> BookList { get; set; }
 
         public ReadingOneModel(Bll.Student7Context dbContext)
         {
@@ -27,6 +28,7 @@ namespace BiblioAdmin.Pages.Order
             Order.Customer = DbContext.Customer.SingleOrDefault(m => m.Id == this.Order.CustomerId);
             OrderList = DbContext.Order.ToList();
             OrderItemList = DbContext.OrderItem.ToList();
+            BookList = DbContext.Book.ToList();
         }
         public ActionResult OnGetDelete(int? id)
         {
