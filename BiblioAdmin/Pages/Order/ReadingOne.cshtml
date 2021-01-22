@@ -79,44 +79,7 @@
         </div>
     </fieldset>
     <form method="post">
-        <h2>Order Items</h2>
-        <table class="list">
-            <thead>
-                <tr>
-                    <th>
 
-                    </th>
-                    <th>
-                        BookId
-                    </th>
-                    <th>
-                        OrderId
-                    </th>
-                    <th>
-                        Quantity
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.OrderItemList)
-                {
-                    <tr>
-                        <td>
-                            <button type="submit" name="OrderItem.Id" value="@item.Id" id="deleteOrderItem" asp-page-handler="DeleteOrderItem">Delete</button>
-                        </td>
-                        <td>
-                            @item.BookId
-                        </td>
-                        <td>
-                            @item.OrderId
-                        </td>
-                        <td>
-                            @item.Quantity
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
         <h3>InsertingOne OrderItem</h3>
         <br />
         <fieldset>
@@ -128,20 +91,20 @@
                 <div class="col-75">
                     <input asp-for="OrderItem.BookId" />
                     @*<select id="OrderItem_OrderId" name="OrderItem.OrderId">
-                        @foreach (var item in Model.BookList)
-                        {
-                            <option value="@item.Id">@item.Id</option>
-                        }
-                    </select>*@
+                            @foreach (var item in Model.BookList)
+                            {
+                                <option value="@item.Id">@item.Id</option>
+                            }
+                        </select>*@
                 </div>
             </div>
             <div class="row">
                 <div class="col-25">
 
-                    <label asp-for="OrderItem.Quantity" > Hoeveelheid</label>
+                    <label asp-for="OrderItem.Quantity"> Hoeveelheid</label>
                 </div>
                 <div class="col-75">
-                    <input asp-for="OrderItem.Quantity"  />
+                    <input asp-for="OrderItem.Quantity" />
                 </div>
             </div>
             <div>
@@ -151,4 +114,44 @@
     </form>
 
 </section>
-<partial name="Order/_ReadingAll" model="Model.OrderList" />
+<aside>
+    <partial name="Order/_ReadingAll" model="Model.OrderList" />
+    <h2>Order Items</h2>
+    <table class="list">
+        <thead>
+            <tr>
+                <th>
+
+                </th>
+                <th>
+                    BookId
+                </th>
+                <th>
+                    OrderId
+                </th>
+                <th>
+                    Quantity
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.OrderItemList)
+            {
+                <tr>
+                    <td>
+                        <button type="submit" name="OrderItem.Id" value="@item.Id" id="deleteOrderItem" asp-page-handler="DeleteOrderItem">Delete</button>
+                    </td>
+                    <td>
+                        @item.BookId
+                    </td>
+                    <td>
+                        @item.OrderId
+                    </td>
+                    <td>
+                        @item.Quantity
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</aside>
