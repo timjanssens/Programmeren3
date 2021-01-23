@@ -47,7 +47,7 @@
                     <label asp-for="OrderItem.Quantity">Hoeveelheid *</label>
                 </div>
                 <div class="col-75">
-                    <input asp-for="OrderItem.Quantity" required="required"/>
+                    <input asp-for="OrderItem.Quantity" required="required" onkeypress="return isNumberKey(event)"/>
                 </div>
             </div>
         </fieldset>
