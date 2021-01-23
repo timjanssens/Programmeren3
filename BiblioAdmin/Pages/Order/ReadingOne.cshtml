@@ -116,42 +116,46 @@
 </section>
 <aside>
     <partial name="Order/_ReadingAll" model="Model.OrderList" />
-    <h2>Order Items</h2>
-    <table class="list">
-        <thead>
-            <tr>
-                <th>
+    <form method="post">
+        <h2>Order Items</h2>
+        <table class="list">
+            <thead>
+                <tr>
+                    <th>
 
-                </th>
-                <th>
-                    BookId
-                </th>
-                <th>
-                    OrderId
-                </th>
-                <th>
-                    Quantity
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model.OrderItemList)
-            {
+                    </th>
+                    <th>
+                        OrderId
+                    </th>
+                    <th>
+                        BookId
+                    </th>
+
+                    <th>
+                        Quantity
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.OrderItemList)
+                {
                 <tr>
                     <td>
                         <button type="submit" name="OrderItem.Id" value="@item.Id" id="deleteOrderItem" asp-page-handler="DeleteOrderItem">Delete</button>
                     </td>
                     <td>
-                        @item.BookId
-                    </td>
-                    <td>
                         @item.OrderId
                     </td>
+                    <td>
+                        @item.BookId
+                    </td>
+
                     <td>
                         @item.Quantity
                     </td>
                 </tr>
-            }
-        </tbody>
-    </table>
+                }
+            </tbody>
+        </table>
+      </form>
 </aside>
