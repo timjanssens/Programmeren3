@@ -26,7 +26,7 @@
             </div>
             <div class="row">
                 <div class="col-25">
-                    <label asp-for="ShippingMethod.Name"></label>
+                    <label asp-for="ShippingMethod.Name">Naam *</label>
                 </div>
                 <div class="col-75">
                     <input asp-for="ShippingMethod.Name" required="required" />
@@ -34,7 +34,7 @@
             </div>
             <div class="row">
                 <div class="col-25">
-                    <label asp-for="ShippingMethod.Description"></label>
+                    <label asp-for="ShippingMethod.Description">Beschrijving *</label>
                 </div>
                 <div class="col-75">
                     <input asp-for="ShippingMethod.Description" required="required" />
@@ -42,7 +42,7 @@
             </div>
             <div class="row">
                 <div class="col-25">
-                    <label asp-for="ShippingMethod.Price"></label>
+                    <label asp-for="ShippingMethod.Price">Prijs *</label>
                 </div>
                 <div class="col-75">
                     <input asp-for="ShippingMethod.Price" required="required" onkeypress="return isNumberKeyDecimal(event)"/>
