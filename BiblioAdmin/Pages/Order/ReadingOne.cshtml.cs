@@ -26,6 +26,7 @@ namespace BiblioAdmin.Pages.Order
             Order.ShippingMethod = DbContext.ShippingMethod.SingleOrDefault(m => m.Id == this.Order.ShippingMethodId);
             Order.Status = DbContext.OrderStatus.SingleOrDefault(m => m.Id == this.Order.StatusId);
             Order.Customer = DbContext.Customer.SingleOrDefault(m => m.Id == this.Order.CustomerId);
+    
             OrderList = DbContext.Order.ToList();
             OrderItemList = DbContext.OrderItem.ToList();
             BookList = DbContext.Book.ToList();
