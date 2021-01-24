@@ -57,7 +57,7 @@
                     <select id="Order_CustomerId" name="Order.CustomerId" required="required">
                         @foreach (var item in Model.CustomerList)
                         {
-                            <option value="@item.Id">@item.FirstName @item.LastName</option>
+                            <option value="@item.Id" selected="@(item.Id == Model.Order.CustomerId ? true : false)" >@item.FirstName @item.LastName</option>
                         }
                     </select>
                 </div>
@@ -70,7 +70,7 @@
                     <select id="Order_ShippingMethodId" name="Order.ShippingMethodId" required="required">
                         @foreach (var item in Model.ShippingMethodList)
                         {
-                            <option value="@item.Id">@item.Name</option>
+                            <option value="@item.Id" selected="@(item.Id == Model.Order.ShippingMethodId ? true : false)">@item.Name</option>
                         }
                     </select>
                 </div>
@@ -83,7 +83,7 @@
                     <select id="Order_StatusId" name="Order.StatusId" required="required">
                         @foreach (var item in Model.OrderStatusList)
                         {
-                            <option value="@item.Id">@item.Name</option>
+                            <option value="@item.Id" selected="@(item.Id == Model.Order.StatusId ? true : false)">@item.Name</option>
                         }
                     </select>
                 </div>

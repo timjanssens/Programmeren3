@@ -32,7 +32,7 @@
                     <select id="OrderItem_BookId" name="OrderItem.BookId">
                         @foreach (var item in Model.BookList)
                         {
-                            <option value="@item.Id">@item.Title</option>
+                            <option value="@item.Id" selected="@(item.Id == Model.OrderItem.BookId ? true : false)">@item.Title</option>
                         }
                     </select>
                 </div>
@@ -46,7 +46,7 @@
                     <select id="OrderItem_OrderId" name="OrderItem.OrderId">
                         @foreach (var item in Model.OrderList)
                         {
-                            <option value="@item.Id">@item.Id</option>
+                            <option value="@item.Id" selected="@(item.Id == Model.OrderItem.OrderId ? true : false)">@item.Id</option>
                         }
                     </select>
                 </div>
