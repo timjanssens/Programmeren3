@@ -1,6 +1,7 @@
 ﻿@page
 @model BiblioAdmin.Pages.Order.InsertingOneModel
 @{
+    ViewData["Title"] = "Order - Insert";
 }
 
 <section>
@@ -29,7 +30,7 @@
                     <label asp-for="Order.ShippingDate">Verzend datum*</label>
                 </div>
                 <div class="col-75">
-                    <input asp-for="Order.ShippingDate" required="required"/>
+                    <input asp-for="Order.ShippingDate" required="required" />
                 </div>
             </div>
             <div class="row">
@@ -37,7 +38,7 @@
                     <label asp-for="Order.Comment">Commentaar</label>
                 </div>
                 <div class="col-75">
-                    <input asp-for="Order.Comment"/>
+                    <input asp-for="Order.Comment" />
                 </div>
             </div>
             <div class="row">

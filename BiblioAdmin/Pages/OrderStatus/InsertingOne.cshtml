@@ -1,6 +1,7 @@
 ﻿@page
 @model BiblioAdmin.Pages.OrderStatus.InsertingOneModel
 @{
+    ViewData["Title"] = "Orderstatus - Insert";
 }
 
 <section>
@@ -22,7 +23,7 @@
                 </div>
                 <div class="col-75">
                     <input asp-for="OrderStatus.Name" required="required" />
-                <span class="alert-danger" asp-validation-for="OrderStatus.Name"></span>
+                    <span class="alert-danger" asp-validation-for="OrderStatus.Name"></span>
                 </div>
             </div>
             <div>

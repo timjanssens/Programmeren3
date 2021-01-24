@@ -1,10 +1,11 @@
 ﻿@page "{id}"
 @model BiblioAdmin.Pages.OrderStatus.ReadingOneModel
 @{
+    ViewData["Title"] = "Orderstatus - Read";
 }
 
 <section>
-   
+
     <div class="navSection">
         <h1>Order status details</h1>
         <div class="linksNavigatie">
@@ -35,7 +36,7 @@
                 <label asp-for="OrderStatus.Name">Naam  *</label>
             </div>
             <div class="col-75">
-                <input asp-for="OrderStatus.Name" required="required" readonly=" @(true)"/>
+                <input asp-for="OrderStatus.Name" required="required" readonly=" @(true)" />
             </div>
             <span class="alert-danger" asp-validation-for="OrderStatus.Name"></span>
         </div>

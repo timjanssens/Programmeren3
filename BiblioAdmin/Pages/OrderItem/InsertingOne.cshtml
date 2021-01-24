@@ -1,6 +1,7 @@
 ﻿@page
 @model BiblioAdmin.Pages.OrderItem.InsertingOneModel
 @{
+    ViewData["Title"] = "OrderItem - Insert";
 }
 
 <section>
@@ -47,7 +48,7 @@
                     <label asp-for="OrderItem.Quantity">Hoeveelheid *</label>
                 </div>
                 <div class="col-75">
-                    <input asp-for="OrderItem.Quantity" required="required" onkeypress="return isNumberKey(event)"/>
+                    <input asp-for="OrderItem.Quantity" required="required" onkeypress="return isNumberKey(event)" />
                 </div>
             </div>
         </fieldset>

@@ -1,6 +1,7 @@
 ﻿@page "{id}"
 @model BiblioAdmin.Pages.ShippingMethod.UpdatingOneModel
 @{
+    ViewData["Title"] = "Shpipping method - Update";
 }
 
 
@@ -45,7 +46,7 @@
                     <label asp-for="ShippingMethod.Price">Prijs *</label>
                 </div>
                 <div class="col-75">
-                    <input asp-for="ShippingMethod.Price" required="required" onkeypress="return isNumberKeyDecimal(event)"/>
+                    <input asp-for="ShippingMethod.Price" required="required" onkeypress="return isNumberKeyDecimal(event)" />
                 </div>
             </div>
         </fieldset>

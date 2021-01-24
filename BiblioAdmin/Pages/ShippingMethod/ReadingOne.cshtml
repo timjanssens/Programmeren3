@@ -1,6 +1,7 @@
 ﻿@page "{id}"
 @model BiblioAdmin.Pages.ShippingMethod.ReadingOneModel
 @{
+    ViewData["Title"] = "Shpipping method - Read";
 }
 
 <section>
@@ -26,7 +27,7 @@
                 <label for="ShippingMethod-Id">Id</label>
             </div>
             <div class="col-75">
-                <input asp-for="ShippingMethod.Id" readonly=" @(true)" >
+                <input asp-for="ShippingMethod.Id" readonly=" @(true)">
             </div>
         </div>
         <div class="row">
