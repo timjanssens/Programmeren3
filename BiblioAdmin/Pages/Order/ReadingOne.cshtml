@@ -87,14 +87,14 @@
             <input type="hidden" value="@Model.Order.Id" name="OrderItem.OrderId" />
             <div class="row">
                 <div class="col-25">
-                    <label asp-for="OrderItem.BookId">Book ID</label>
+                    <label asp-for="OrderItem.BookId">Book titel</label>
                 </div>
                 <div class="col-75">
                     @*                  <input asp-for="OrderItem.BookId" />*@
                     <select id="OrderItem_BookId" name="OrderItem.BookId">
                         @foreach (var item in Model.BookList)
                         {
-                            <option value="@item.Id">@item.Id</option>
+                            <option value="@item.Id">@item.Title</option>
                         }
                     </select>
                 </div>
